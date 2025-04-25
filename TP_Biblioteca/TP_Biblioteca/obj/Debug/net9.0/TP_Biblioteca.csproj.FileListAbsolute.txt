@@ -1,0 +1,5 @@
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfoInputs.cache
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfo.cs
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.CoreCompileInputs.cache
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.sourcelink.json

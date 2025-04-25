@@ -1,34 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\",
+  "WorkspaceRootPath": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book_loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book_loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book_loan_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book_loan_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\uap\\2do a\u00F1o primer cuatri\\zgit\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,31 +38,30 @@
       "DocumentGroups": [
         {
           "DockedHeight": 293,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Library.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Library.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Library.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Library.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Library.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Biblioteca.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Biblioteca.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Biblioteca.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Biblioteca.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Biblioteca.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T01:08:10.28Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Book.cs",
-              "ViewState": "AgIAAAoAAADAzMzMzMw7wAwAAAATAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Libro.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Libro.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Libro.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Libro.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Libro.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T00:51:41.039Z",
               "IsPinned": true,
@@ -70,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Topic.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Topic.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Topic.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Topic.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Topic.cs",
-              "ViewState": "AgIAAAoAAACAmZmZmZklwBMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Tema.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Tema.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Tema.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Tema.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Tema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T00:53:34.732Z",
               "IsPinned": true,
@@ -84,13 +83,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\User.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\User.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\User.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Usuario.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Usuario.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T00:54:26.917Z",
               "IsPinned": true,
@@ -98,44 +97,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Book_Loan.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book_Loan.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Book_Loan.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBYAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Prestamo.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Prestamo.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Prestamo.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Prestamo.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T00:56:48.164Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Book_Loan_Status.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan_Status.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book_Loan_Status.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan_Status.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Book_Loan_Status.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "EstadoPrestamo.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\EstadoPrestamo.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\EstadoPrestamo.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\EstadoPrestamo.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\EstadoPrestamo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T01:18:38.993Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
+              "DocumentMoniker": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
               "RelativeDocumentMoniker": "TP_Biblioteca\\Program.cs",
-              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
+              "ToolTip": "C:\\UAP\\2do A\u00D1O PRIMER CUATRI\\zGit\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
               "RelativeToolTip": "TP_Biblioteca\\Program.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAgwJYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:48:09.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T00:48:09.648Z"
             }
           ]
         }

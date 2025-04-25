@@ -1,0 +1,145 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book_loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book_loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\source\\repos\\tp_biblioteca\\tp_biblioteca\\models\\book_loan_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\book_loan_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 293,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Library.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Library.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Library.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Library.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Library.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T01:08:10.28Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Book.cs",
+              "ViewState": "AgIAAAoAAADAzMzMzMw7wAwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:51:41.039Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Topic.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Topic.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Topic.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Topic.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Topic.cs",
+              "ViewState": "AgIAAAoAAACAmZmZmZklwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:53:34.732Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\User.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\User.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:54:26.917Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Book_Loan.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book_Loan.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Book_Loan.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:56:48.164Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Book_Loan_Status.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan_Status.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Book_Loan_Status.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Models\\Book_Loan_Status.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Models\\Book_Loan_Status.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T01:18:38.993Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Program.cs",
+              "ToolTip": "C:\\Users\\Samu\\source\\repos\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Program.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAgwJYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:48:09.648Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

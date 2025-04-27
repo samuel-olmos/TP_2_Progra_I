@@ -1,0 +1,33 @@
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.deps.json
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfoInputs.cache
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfo.cs
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.csproj.CoreCompileInputs.cache
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.dll
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\refint\Mi_libreria.dll
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.pdb
+C:\Users\Mi PC\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\ref\Mi_libreria.dll
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.deps.json
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfoInputs.cache
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfo.cs
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.csproj.CoreCompileInputs.cache
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.dll
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\refint\Mi_libreria.dll
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.pdb
+C:\Users\samuel.olmos\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\ref\Mi_libreria.dll
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.deps.json
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfoInputs.cache
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfo.cs
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.csproj.CoreCompileInputs.cache
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.dll
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\refint\Mi_libreria.dll
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.pdb
+C:\Users\Samu\source\repos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\ref\Mi_libreria.dll

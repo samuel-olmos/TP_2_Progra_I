@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Design;
 using System.Drawing;
 using Mi_libreria;
+using TP_Biblioteca.Controladores;
 using TP_Biblioteca.Drivers;
 using TP_Biblioteca.Models;
 
@@ -18,41 +19,18 @@ namespace TP_Biblioteca
         }
         public static void Cargar_Datos()
         {
-            //Creando escritores de libros (User Class)
-            Usuario Antoine_de_Saint_Exupéry = new Usuario();
-            Antoine_de_Saint_Exupéry.Id = 1;
-            Antoine_de_Saint_Exupéry.Nombre = "Antoine";
-            Antoine_de_Saint_Exupéry.Apellido = "De Saint-Exupéry";
-            Antoine_de_Saint_Exupéry.Email = "Antoine.Saint-Exupéry@gmail.com";
-
-            Usuario James_Clear = new Usuario();
-            James_Clear.Id = 2;
-            James_Clear.Nombre = "James";
-            James_Clear.Apellido = "Clear";
-            James_Clear.Email = "james.clear@gmail.com";
-
-            Usuario Roald_Dahl = new Usuario();
-            Roald_Dahl.Id = 3;
-            Roald_Dahl.Nombre = "Roald";
-            Roald_Dahl.Apellido = "Dahl";
-            Roald_Dahl.Email = "roald_dahl@gmail.com";
-
-            Usuario Bryan_Mealer = new Usuario();
-            Bryan_Mealer.Id = 4;
-            Bryan_Mealer.Nombre = "Bryan";
-            Bryan_Mealer.Apellido = "Mealer";
-            Bryan_Mealer.Email = "brymea@gmail.com";
-
             //Creando los Temas que ofrece la biblioteca
             Tema Literatura_Infantil = new Tema();
             Literatura_Infantil.Id = 1;
             Literatura_Infantil.Nombre = "Literatura Infantil";
             Literatura_Infantil.Descripcion = "Libros escritos para el público infantil o juvenil";
+            Temas.Add(Literatura_Infantil);
 
             Tema Auto_Ayuda = new Tema();
             Auto_Ayuda.Id = 2;
             Auto_Ayuda.Nombre = "Auto-ayuda";
             Auto_Ayuda.Descripcion = "Libros dedicados al crecimiento y desarrollo personal";
+            Temas.Add(Auto_Ayuda);
 
             //Creando Libros para agregar a la biblioteca
             Libro El_principito = new Libro();
@@ -86,13 +64,6 @@ namespace TP_Biblioteca
             El_niño_que_domo_el_viento.Autor = "Bryan Mealer";
             Libros.Add(El_niño_que_domo_el_viento);
             //El_niño_que_domo_el_viento.Tema = Auto_Ayuda;
-
-            //Añadiendo libros a la biblioteca
-            //library.ListaLibros.Add(El_principito);
-            //library.ListaLibros.Add(Habitos_atomicos);
-            //library.ListaLibros.Add(Matilda);
-            //library.ListaLibros.Add(El_niño_que_domo_el_viento);
-        
         
             //Añadiendo libros a las listas de cada tópico
             /*-------------------CHEQUEAR-------------------*/
@@ -105,19 +76,19 @@ namespace TP_Biblioteca
 
             //Creando usuarios para los préstamos
             Usuario user_1 = new Usuario();
-            user_1.Id = 10;
+            user_1.Id = 1;
             user_1.Nombre = "Tomás";
             user_1.Apellido = "Caussa";
             user_1.Email = "tomas.caussa@uap.edu.ar";
 
             Usuario user_2 = new Usuario();
-            user_2.Id = 11;
+            user_2.Id = 2;
             user_2.Nombre = "Milena";
             user_2.Apellido = "Seri";
             user_2.Email = "milena.seri@uap.edu.ar";
 
             Usuario user_3 = new Usuario();
-            user_3.Id = 12;
+            user_3.Id = 3;
             user_3.Nombre = "Samuel";
             user_3.Apellido = "Olmos";
             user_3.Email = "samuel.olmos@uap.edu.ar";
@@ -160,7 +131,7 @@ namespace TP_Biblioteca
             switch (opcion)
             {
                 case 1: Console.Clear(); nLibro.Menu(); Menu(); break;
-                case 2: Console.Clear(); /*nTema.Menu();*/ Menu(); break;
+                case 2: Console.Clear(); nTema.Menu(); Menu(); break;
                 case 3: Console.Clear(); /*nUsuario.Menu();*/ Menu(); break;
                 case 4: Console.Clear(); /*nPrestamo.Menu();*/ Menu(); break;
                 case 5: break;

@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\drivers\\nlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\drivers\\nlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\controladores\\ntema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\controladores\\ntema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\controladores\\nlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\controladores\\nlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\modelos\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\modelos\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\modelos\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\modelos\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\models\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\models\\estadoprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\modelos\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\modelos\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\modelos\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\modelos\\tema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|c:\\users\\samu\\documents\\2do a\u00F1o\\programaci\u00F3n i\\tps\\tp_2_progra_i\\tp_biblioteca\\tp_biblioteca\\modelos\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB9DEB2-747E-4711-AA5B-74DB4C10E3C0}|TP_Biblioteca\\TP_Biblioteca.csproj|solutionrelative:tp_biblioteca\\modelos\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +42,117 @@
       "DocumentGroups": [
         {
           "DockedHeight": 293,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Libro.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Libro.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Libro.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Libro.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Libro.cs",
-              "ViewState": "AgIAAAkAAABgZmZmZmYkwBEAAAAyAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Libro.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Modelos\\Libro.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Libro.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Modelos\\Libro.cs",
+              "ViewState": "AgIAAAkAAABgZmZmZmYkwA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T00:51:41.039Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Tema.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Tema.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Tema.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Tema.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Tema.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:53:34.732Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Usuario.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:54:26.917Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Prestamo.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Prestamo.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\Prestamo.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\Prestamo.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\Prestamo.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:56:48.164Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "EstadoPrestamo.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\EstadoPrestamo.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Models\\EstadoPrestamo.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Models\\EstadoPrestamo.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Models\\EstadoPrestamo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Title": "Tema.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Tema.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Modelos\\Tema.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Tema.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Modelos\\Tema.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T01:18:38.993Z",
-              "IsPinned": true
+              "WhenOpened": "2025-04-24T00:53:34.732Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Usuario.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Modelos\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Usuario.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Modelos\\Usuario.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:54:26.917Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Prestamo.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Modelos\\Prestamo.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\Prestamo.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Modelos\\Prestamo.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:56:48.164Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EstadoPrestamo.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\EstadoPrestamo.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Modelos\\EstadoPrestamo.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Modelos\\EstadoPrestamo.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Modelos\\EstadoPrestamo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T01:18:38.993Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "nLibro.cs",
-              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Drivers\\nLibro.cs",
-              "RelativeDocumentMoniker": "TP_Biblioteca\\Drivers\\nLibro.cs",
-              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Drivers\\nLibro.cs",
-              "RelativeToolTip": "TP_Biblioteca\\Drivers\\nLibro.cs",
-              "ViewState": "AgIAAHwAAACA//////8bwIYAAAANAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Controladores\\nLibro.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Controladores\\nLibro.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Controladores\\nLibro.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Controladores\\nLibro.cs",
+              "ViewState": "AgIAADIAAACAMjMzMzMhwDoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T18:10:02.874Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "nTema.cs",
+              "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Controladores\\nTema.cs",
+              "RelativeDocumentMoniker": "TP_Biblioteca\\Controladores\\nTema.cs",
+              "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Controladores\\nTema.cs",
+              "RelativeToolTip": "TP_Biblioteca\\Controladores\\nTema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T18:05:22.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
               "RelativeDocumentMoniker": "TP_Biblioteca\\Program.cs",
               "ToolTip": "C:\\Users\\Samu\\Documents\\2do A\u00F1o\\Programaci\u00F3n I\\TPs\\TP_2_Progra_I\\TP_Biblioteca\\TP_Biblioteca\\Program.cs",
               "RelativeToolTip": "TP_Biblioteca\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:48:09.648Z"
+              "WhenOpened": "2025-04-24T00:48:09.648Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -43,7 +43,7 @@ namespace TP_Biblioteca.Drivers
             Console.ReadKey(true);
         }
 
-        public static void OrdenarLibros()
+        public static void Ordenar()
         {
             Program.Libros = Program.Libros.OrderBy(l => l.Nombre).ToList();
         }
@@ -65,13 +65,14 @@ namespace TP_Biblioteca.Drivers
             Console.WriteLine($"Nombre del libro: {libro_seleccionado.Nombre}");
             Console.WriteLine($"Autor del libro: {libro_seleccionado.Autor}");
             Console.WriteLine($"Descripción: {libro_seleccionado.Prologo}");
+            Console.WriteLine("\nPresione cualquier tecla para volver");
             Console.ReadKey(true);
         }
 
         public static void Modificar(Libro libro)
         {
             string[] opciones = new string[] { "Cambiar nombre", "Cambiar Autor", "Cambiar Prólogo", "Salir" };
-            int opcion = Selection_Menu.Print(libro.Nombre + " - By " + libro.Autor, 1, opciones)+1;
+            int opcion = Selection_Menu.Print(libro.Nombre + " - By " + libro.Autor, 1, opciones);
             switch (opcion)
             {
                 case 1: Console.Write("Ingrese Nuevo Nombre: "); libro.Nombre = Validations.Letters_only_input(); Modificar(libro); break;
@@ -84,6 +85,7 @@ namespace TP_Biblioteca.Drivers
 
         public static void Eliminar(Libro libro)
         {
+            //Falta validar que no se pueda eliminar un libro si tiene un préstamo activo
             Program.Libros.Remove(libro);
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("\nLibro borrado con éxito");
@@ -103,11 +105,11 @@ namespace TP_Biblioteca.Drivers
             string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
             Console.Clear();
-            int opcion = Selection_Menu.Print("Libro", 0, opciones)+1;
+            int opcion = Selection_Menu.Print("Libros", 0, opciones)+1;
             switch (opcion)
             {
-                case 1: Console.Clear(); Agregar(); Menu(); break;
-                case 2: Console.Clear();
+                case 1: Console.Clear(); Ordenar(); Agregar(); Menu(); break;
+                case 2: Console.Clear(); Ordenar();
                     if (Program.Libros.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -118,7 +120,7 @@ namespace TP_Biblioteca.Drivers
                         break;
                     }
                     Modificar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
-                case 3: Console.Clear();
+                case 3: Console.Clear(); Ordenar();
                     if (Program.Libros.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -129,7 +131,7 @@ namespace TP_Biblioteca.Drivers
                         break;
                     }
                     Eliminar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
-                case 4: Console.Clear(); Listar(); Menu(); break;
+                case 4: Console.Clear(); Ordenar(); Listar(); Menu(); break;
                 case 5: break;
                 default: Menu(); break;
             }

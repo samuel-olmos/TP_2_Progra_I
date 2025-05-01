@@ -12,6 +12,7 @@ namespace TP_Biblioteca.Models
         public string Nombre { get; set; }
         public string Autor { get; set; } //DataType User?
         public string Prologo { get; set; } //Opcional
+        //public Tema Tema { get; set; }
 
         public Libro() { }
 

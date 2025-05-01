@@ -34,3 +34,22 @@ C:\Users\Samu\source\repos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\n
 C:\Users\Samu\source\repos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.pdb
 C:\Users\Samu\source\repos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.genruntimeconfig.cache
 C:\Users\Samu\source\repos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\ref\Probando_Mi_libreria.dll
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Probando_Mi_libreria.exe
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Probando_Mi_libreria.deps.json
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Probando_Mi_libreria.runtimeconfig.json
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Probando_Mi_libreria.dll
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Probando_Mi_libreria.pdb
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.csproj.AssemblyReference.cache
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.AssemblyInfoInputs.cache
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.AssemblyInfo.cs
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.csproj.CoreCompileInputs.cache
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.sourcelink.json
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando.50749C6B.Up2Date
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.dll
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\refint\Probando_Mi_libreria.dll
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.pdb
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\Probando_Mi_libreria.genruntimeconfig.cache
+C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Probando_Mi_libreria\Probando_Mi_libreria\obj\Debug\net9.0\ref\Probando_Mi_libreria.dll

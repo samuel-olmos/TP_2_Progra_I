@@ -8,12 +8,12 @@ namespace Probando_Mi_libreria
             
             //int num = Validations.Numbers_only_input();
             //string str = Validations.Letters_only_input();
-            string[] options = { "Árbol", "Casa", "Auto", "Carpa", "Manzana", "Mano" };
+            string[] options = { "Árbol", "Casa", "Auto", "Carpa", "Manzanas", "Mano" };
 
             //Console.WriteLine(num);
             //Console.WriteLine(str);
             
-            Console.WriteLine(options[Selection_Menu.Print("Opciones", 2, options)]);
+            Console.WriteLine(options[Selection_Menu.Print("Opc", 0, options)]);
 
         }
     }

@@ -115,8 +115,13 @@ namespace Mi_libreria
     {
         public static int Print(string title, int index, string[] options)
         {
+            if (index < options.Length - options.Length - 1 && index > options.Length+1)
+            {
+                return -1;
+            }
             bool flag = true;
             string max_lenght_word = "";
+            int dist = 2;
             foreach (string word in options.Append(title))
             {
                 if (max_lenght_word.Length < word.Length) max_lenght_word = word;
@@ -126,17 +131,18 @@ namespace Mi_libreria
                 Console.Clear();
 
                 Console.Write("╔");
-                for (int i = 0; i < max_lenght_word.Length+2; i++) Console.Write("═");
+                if ((max_lenght_word.Length % 2 == 0 && title.Length % 2 != 0) || (max_lenght_word.Length % 2 != 0 && title.Length % 2 == 0)) dist = 3;
+                for (int i = 0; i < max_lenght_word.Length+dist; i++) Console.Write("═");
                 Console.WriteLine("╗");
 
                 Console.Write("║");
-                for (int i = 0; i < (max_lenght_word.Length+2-title.Length)/2; i++) Console.Write(" ");
+                for (int i = 0; i < (max_lenght_word.Length+dist-title.Length)/2; i++) Console.Write(" ");
                 Console.Write(title);
-                for (int i = 0; i < (max_lenght_word.Length+2-title.Length)/2; i++) Console.Write(" ");
+                for (int i = 0; i < (max_lenght_word.Length+dist-title.Length)/2; i++) Console.Write(" ");
                 Console.WriteLine("║");
 
                 Console.Write("╠");
-                for (int i = 0; i < max_lenght_word.Length+2; i++) Console.Write("═");
+                for (int i = 0; i < max_lenght_word.Length+dist; i++) Console.Write("═");
                 Console.WriteLine("╣");
 
 
@@ -146,11 +152,11 @@ namespace Mi_libreria
                     if (word == options[index]) Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.Write(word);
                     Console.ResetColor();
-                    for (int i = 0; i < max_lenght_word.Length+2-word.Length; i++) Console.Write(" ");
+                    for (int i = 0; i < max_lenght_word.Length+dist-word.Length; i++) Console.Write(" ");
                     Console.WriteLine("║");
                 }
                 Console.Write("╚");
-                for (int i = 0; i < max_lenght_word.Length+2; i++) Console.Write("═");
+                for (int i = 0; i < max_lenght_word.Length+dist; i++) Console.Write("═");
                 Console.WriteLine("╝");
 
                 ConsoleKeyInfo key = Console.ReadKey(true);

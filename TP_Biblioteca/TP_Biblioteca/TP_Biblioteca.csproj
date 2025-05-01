@@ -11,4 +11,10 @@
     <Folder Include="Drivers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Mi_libreria">
+      <HintPath>..\..\Librería_ejemplos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

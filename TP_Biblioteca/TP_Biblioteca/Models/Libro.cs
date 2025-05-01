@@ -10,12 +10,12 @@ namespace TP_Biblioteca.Models
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public Usuario Autor { get; set; } //DataType User?
+        public string Autor { get; set; } //DataType User?
         public string Prologo { get; set; } //Opcional
 
         public Libro() { }
 
-        public Libro(int id, string nombre, Usuario autor, string prologo)
+        public Libro(int id, string nombre, string autor, string prologo)
         {
             Id = id;
             Nombre = nombre;

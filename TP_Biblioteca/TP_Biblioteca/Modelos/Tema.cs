@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Biblioteca.Models
+namespace TP_Biblioteca.Modelos
 {
     internal class Tema
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Descripcion { get; set; } //Opcional
-        public List<Libro> ListaLibros{ get; set; }
+        public List<Libro> Libros { get; set; }
+
         public Tema()
         {
-            ListaLibros = new List<Libro>();
+            Libros = new List<Libro>();
         }
-        public Tema(int id, string nombre, string descripcion)
+
+        public Tema(int id, string nombre)
         {
             Id = id;
             Nombre = nombre;
-            Descripcion = descripcion;
-            ListaLibros = new List<Libro>();
+            Libros = new List<Libro>();
         }
     }
 }

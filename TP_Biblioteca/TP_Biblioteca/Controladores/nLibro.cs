@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Biblioteca.Models;
+using TP_Biblioteca.Modelos;
 using Mi_libreria;
 
-namespace TP_Biblioteca.Drivers
+namespace TP_Biblioteca.Controladores
 {
     internal class nLibro
     {

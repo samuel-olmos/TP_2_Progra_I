@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mi_libreria;
-using TP_Biblioteca.Drivers;
-using TP_Biblioteca.Models;
+using TP_Biblioteca.Controladores;
+using TP_Biblioteca.Modelos;
 
 namespace TP_Biblioteca.Controladores
 {
@@ -20,12 +20,10 @@ namespace TP_Biblioteca.Controladores
             tema.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             tema.Nombre = Validations.Letters_only_input();
-            Console.Write("Coloque una descripción del tema: ");
-            tema.Descripcion = Validations.Letters_only_input();
 
             foreach (Tema t in Program.Temas)
             {
-                if (t.Id == tema.Id && t.Nombre == tema.Nombre && t.Descripcion == tema.Descripcion)
+                if (t.Id == tema.Id && t.Nombre == tema.Nombre)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("\nEl tema que desea agregar ya existe");
@@ -63,7 +61,6 @@ namespace TP_Biblioteca.Controladores
             Tema tema_seleccionado = Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)];
             Console.Clear();
             Console.WriteLine($"Nombre del Tema: {tema_seleccionado.Nombre}");
-            Console.WriteLine($"Descripción: {tema_seleccionado.Descripcion}");
             Console.WriteLine("\nPresione cualquier tecla para continuar");
             Console.ReadKey(true);
 
@@ -79,20 +76,19 @@ namespace TP_Biblioteca.Controladores
 
         public static void Modificar(Tema tema)
         {
-            string[] opciones = new string[] { "Cambiar nombre", "Cambiar Descripción", "Salir" };
+            string[] opciones = new string[] { "Cambiar nombre", "Salir" };
             int opcion = Selection_Menu.Print(tema.Nombre, 1, opciones);
             switch (opcion)
             {
-                case 1: Console.Write("Ingrese Nuevo Nombre: "); tema.Nombre = Validations.Letters_only_input(); Modificar(tema); break;
-                case 3: Console.Write("Ingrese Nueva Descripción: "); tema.Descripcion = Validations.Letters_only_input(); Modificar(tema); break;
-                case 4: break;
+                case 0: Console.Write("Ingrese Nuevo Nombre: "); tema.Nombre = Validations.Letters_only_input(); Modificar(tema); break;
+                case 1: break;
                 default: Modificar(tema); break;
             }
         }
 
         public static void Eliminar(Tema tema)
         {
-            if (tema.ListaLibros.Count == 0)
+            if (tema.Libros.Count == 0)
             {
                 //Valida si existen libros asociados al tema
                 Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -130,7 +126,7 @@ namespace TP_Biblioteca.Controladores
             {
                 case 0: Console.Clear(); Ordenar(); nLibro.Ordenar();
                     Libro libro_seleccionado = Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)];
-                    if (tema.ListaLibros.Contains(libro_seleccionado))
+                    if (tema.Libros.Contains(libro_seleccionado))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("\nEl libro que desea agregar al Tema ya se encuentra dentro del mismo");
@@ -139,7 +135,7 @@ namespace TP_Biblioteca.Controladores
                     }
                     else
                     {
-                        tema.ListaLibros.Add(libro_seleccionado);
+                        tema.Libros.Add(libro_seleccionado);
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine("\nEl libro se asignó con éxito al Tema seleccionado");
                         Console.ResetColor();

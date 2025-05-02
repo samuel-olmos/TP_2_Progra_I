@@ -1,20 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Biblioteca.Models
+namespace TP_Biblioteca.Modelos
 {
-    internal class EstadoPrestamo
+    public enum EstadoPrestamo
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public EstadoPrestamo() { }
-        public EstadoPrestamo(int id, string nombre) 
-        {
-            Id = id;
-            Nombre = nombre;
-        }
+        Activo = 1,
+        Devuelto = 2,
+        Vencido = 3
     }
 }

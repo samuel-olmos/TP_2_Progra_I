@@ -34,19 +34,23 @@ namespace TP_Biblioteca
             };
             Temas.Add(tema2);
 
-            var tema3 = new Tema
-            {
+            var tema3 = new Tema {
                 Id = 3,
-                Nombre = "Novelas cortas"
+                Nombre = "Novela corta"
             };
             Temas.Add(tema3);
 
-            var tema4 = new Tema
-            {
+            var tema4 = new Tema {
                 Id = 4,
                 Nombre = "Biografía"
             };
             Temas.Add(tema4);
+
+            var tema5 = new Tema {
+                Id = 5,
+                Nombre = "Ciencia Ficción"
+            };
+            Temas.Add(tema5);
 
             // Creación de libros
             var libro1 = new Libro {
@@ -90,6 +94,28 @@ namespace TP_Biblioteca
             Libros.Add(libro4);
             tema4.Libros.Add(libro4);
 
+            Libro libro5 = new Libro
+            {
+                Id = 5,
+                Nombre = "La metamorfosis",
+                Prologo = "«Una mañana, al despertar de sueños intranquilos, Gregor Samsa se encontró en su cama convertido en un monstruoso bicho».\r\n\r\nLa metamorfosis es uno de los relatos más conmovedores e inquietantes de la literatura de todos los tiempos. La animalización del hombre manifiesta, entre otras cosas, la desesperanza frente a un destino personal pero también el pesimismo respecto a lo humano en términos más generales.",
+                Autor = "Franz Kafka",
+                Temas = { tema3 }
+            };
+            Libros.Add(libro5);
+            tema3.Libros.Add(libro5);
+
+            Libro libro6= new Libro
+            {
+                Id = 6,
+                Nombre = "1984",
+                Prologo = "Es el año 1984 en Oceanía, al menos eso piensa Winston, aunque no está seguro de ello. El pasado ha sido reinventado y el presente también es susceptible de ser modificado. Winston mismo, que trabaja para el Partido en el Ministerio de la Verdad, es el encargado de reescribir los archivos que contradicen la versión del Gran Hermano, siguiendo siempre sus consignas: La guerra es la paz. La libertad es la esclavitud. La ignorancia es la fuerza. Aunque es hábil, con cada nueva mentira su conciencia comienza a pesarle, e intenta rebelarse: primero escribe un diario, luego entabla una relación secreta con Julia. Pero la Policía del Pensamiento está más cerca de lo que parece, y el Gran Hermano está siempre observando…\r\n\r\nLa odisea de Winston Smith en un mundo en el que resulta imposible escapar del control de una dictadura es una de las obras más célebres del siglo xx y una brillante advertencia sobre los totalitarismos. Una novela que cobra nueva vigencia en la sociedad actual, en la que los mecanismos de control social se hallan más perfeccionados que en ningún otro momento de la historia.",
+                Autor = "George Orwell",
+                Temas = { tema5 }
+            };
+            Libros.Add(libro6);
+            tema5.Libros.Add(libro6);
+
             // Creación de usuarios
             var usuario1 = new Usuario {
                 Id = 1,
@@ -129,7 +155,7 @@ namespace TP_Biblioteca
 
             var prestamo2 = new Prestamo {
                 Id = 2,
-                Usuario = usuario2,
+                Usuario = usuario3,
                 Libro = libro3,
                 FechaPrestamo = new DateTime(2025, 3, 1),
                 FechaLimiteDevolucion = new DateTime(2025, 3, 21), // Extendida
@@ -148,6 +174,28 @@ namespace TP_Biblioteca
                 // Estado "Vencido"
             };
             Prestamos.Add(prestamo3);
+
+            var prestamo4 = new Prestamo {
+                Id = 4,
+                Usuario = usuario2,
+                Libro = libro5,
+                FechaPrestamo = new DateTime(2025, 1, 15),
+                // Sin fecha límite (DateTime.Now + 14 días)
+                FechaDevolucionReal = new DateTime(2025, 1, 20)
+                // Estado "Devuelto"
+            };
+            Prestamos.Add(prestamo4);
+
+            var prestamo5 = new Prestamo {
+                Id = 5,
+                Usuario = usuario2,
+                Libro = libro6
+                // Sin fecha de préstamo (DateTime.Now)
+                // Sin fecha límite (DateTime.Now + 14 días)
+                // Sin fecha de devolución (null)
+                // Estado "Activo"
+            };
+            Prestamos.Add(prestamo5);
         }
 
         public static void Menu()

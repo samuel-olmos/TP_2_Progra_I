@@ -72,10 +72,50 @@ namespace TP_Biblioteca.Controladores
             Console.WriteLine($"Nombre del libro: {libro_seleccionado.Nombre}");
             Console.WriteLine($"Autor del libro: {libro_seleccionado.Autor}");
             Console.WriteLine($"Descripción: {libro_seleccionado.Prologo}");
-            Console.WriteLine("\nPresione cualquier tecla para volver");
+            Console.WriteLine("\nPresione cualquier tecla para volver...");
             Console.ReadKey(true);
         }
 
+        // Verificar disponibilidad de libros
+        public static List<Libro> VerificarDisponibilidad()
+        {
+            // Filtrar libros disponibles que no están en préstamos activos o vencidos
+            return Program.Libros
+                .Where(l => l.Disponible && !Program.Prestamos.Any(p =>
+                    p.Libro.Id == l.Id &&
+                    (p.Estado == EstadoPrestamo.Activo || p.Estado == EstadoPrestamo.Vencido)))
+                .ToList();
+        }
+
+
+        // Listar libros disponibles para préstamo
+        public static Libro ListarDisponibles()
+        {
+            Console.Clear();
+
+            // Obtener libros disponibles usando la nueva función
+            var librosDisponibles = VerificarDisponibilidad();
+
+            // Verificar si hay libros disponibles
+            if (librosDisponibles.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo hay libros disponibles para préstamo.");
+                Console.ResetColor();
+                return null;
+            }
+
+            // Crear un array con los nombres de los libros disponibles
+            string[] nombresLibros = librosDisponibles.Select(l => l.Nombre).ToArray();
+
+            // Mostrar lista de libros disponibles
+            int seleccionado = Selection_Menu.Print("Libros Disponibles", 0, nombresLibros);
+
+            // Retornar el libro seleccionado
+            return librosDisponibles[seleccionado];
+        }
+
+        // Modificar libro
         public static void Modificar(Libro libro)
         {
             string[] opciones = new string[] { "Cambiar nombre", "Cambiar Autor", "Cambiar Prólogo", "Salir" };
@@ -90,15 +130,13 @@ namespace TP_Biblioteca.Controladores
             }
         }
 
+        // Eliminar libro
         public static void Eliminar(Libro libro)
         {
-            // Verificar si el libro está prestado ("Activo" o "Vencido")
-            bool estaPrestado = Program.Prestamos.Any(p =>
-                p.Libro.Id == libro.Id &&
-                (p.Estado == EstadoPrestamo.Activo || p.Estado == EstadoPrestamo.Vencido)
-            );
+            // Verificar si el libro está disponible
+            var librosDisponibles = VerificarDisponibilidad();
 
-            if (estaPrestado)
+            if (!librosDisponibles.Contains(libro))
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("\nNo se puede eliminar el libro porque está prestado (Activo o Vencido).");

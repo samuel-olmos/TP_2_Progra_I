@@ -51,16 +51,23 @@ namespace TP_Biblioteca.Controladores
         public static void Listar()
         {
             Console.Clear();
-            if (Program.Libros.Count == 0)
+            
+            // Filtrar libros disponibles
+            var librosDisponibles = Program.Libros.Where(l => l.Disponible).ToList();
+
+            // Verificar que existan libros disponibles
+            if (librosDisponibles.Count == 0)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("\nNo existen datos");
+                Console.WriteLine("\nNo existen libros disponibles");
                 Console.ResetColor();
                 Console.ReadKey(true);
                 return;
             }
-            string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
-            Libro libro_seleccionado = Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)];
+
+            string[] nombres = librosDisponibles.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+            Libro libro_seleccionado = librosDisponibles[Selection_Menu.Print("Lista de Libros", 0, nombres)];
+
             Console.Clear();
             Console.WriteLine($"Nombre del libro: {libro_seleccionado.Nombre}");
             Console.WriteLine($"Autor del libro: {libro_seleccionado.Autor}");
@@ -85,11 +92,26 @@ namespace TP_Biblioteca.Controladores
 
         public static void Eliminar(Libro libro)
         {
-            //Falta validar que no se pueda eliminar un libro si tiene un préstamo activo
-            Program.Libros.Remove(libro);
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("\nLibro borrado con éxito");
-            Console.ResetColor();
+            // Verificar si el libro está prestado ("Activo" o "Vencido")
+            bool estaPrestado = Program.Prestamos.Any(p =>
+                p.Libro.Id == libro.Id &&
+                (p.Estado == EstadoPrestamo.Activo || p.Estado == EstadoPrestamo.Vencido)
+            );
+
+            if (estaPrestado)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo se puede eliminar el libro porque está prestado (Activo o Vencido).");
+                Console.ResetColor();
+            }
+            else
+            {
+                libro.Disponible = false;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("\nLibro borrado con éxito.");
+                Console.ResetColor();
+            }
+
             Console.ReadKey(true);
         }
 

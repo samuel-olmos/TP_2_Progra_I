@@ -13,6 +13,7 @@ namespace TP_Biblioteca.Modelos
         public string Autor { get; set; }
         public string Prologo { get; set; }
         public List<Tema> Temas { get; set; }
+        public bool Disponible { get; set; } = true;
 
         public Libro()
         {

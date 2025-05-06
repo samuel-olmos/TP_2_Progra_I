@@ -55,7 +55,7 @@ namespace Mi_libreria
             return int.Parse(valor); //Retorna un int
         }
 
-        public static string Letters_only_input()
+        public static string Characters_input()
         {
             bool fin = false; //Variable para Do While
             string valor = ""; //Cadena que se almacena para return
@@ -108,7 +108,113 @@ namespace Mi_libreria
             return valor; //Retorna un string
         }
 
+        public static string Letters_only_input()
+        {
+            bool fin = false; //Variable para Do While
+            string valor = ""; //Cadena que se almacena para return
 
+            //"Validando" que sea una letra
+            do
+            {
+                ConsoleKeyInfo k = Console.ReadKey(true);
+                //Lo que se presione no se muestra en pantalla con el True
+                //Console.WriteLine((int)k.KeyChar);
+
+                if (k.Key == ConsoleKey.Enter)
+                {
+                    if (valor != "")
+                    {
+                        fin = true;
+                    }
+
+                }
+                //Borrando caracteres con Backspace
+                else if (k.Key == ConsoleKey.Backspace)
+                {
+                    if (valor.Length > 0) //Que no borre más allá de lo que se toma por entrada
+                    {
+                        //Borrando la última letra de la consola
+                        Console.Write("\b");
+                        Console.Write(" ");
+                        Console.Write("\b");
+
+                        //Borrando la última letra de la cadena almacenada 
+                        valor = valor.Substring(0, valor.Length - 1);
+                    }
+                }
+
+                else if (k.Key == ConsoleKey.Spacebar)
+                {
+                    Console.Write(" ");
+                    valor = valor + " ";
+                }
+
+                //Mostrando por pantalla los valores que se están presionando (solo letras)
+                if (((int)k.KeyChar >= 65 && (int)k.KeyChar <= 90) || ((int)k.KeyChar >= 97 && (int)k.KeyChar <= 122))
+                {
+                    Console.Write(k.KeyChar); //Por pantalla
+                    valor = valor + k.KeyChar; //En la cadena
+                }
+            } while (!fin);
+            Console.WriteLine();
+            return valor; //Retorna un string
+        }
+
+        public static DateTime Date_input()
+        {
+            bool fin = false;
+            int dia = 0;
+            int mes = 0;
+            int año = 0;
+            string valor = "";
+            do
+            {
+                ConsoleKeyInfo k = Console.ReadKey(true);
+
+                if (k.Key == ConsoleKey.Enter && valor.Length == 10)
+                {
+                    fin = true;
+                    año = int.Parse(valor.Substring(0, 4));
+                    mes = int.Parse(valor.Substring(5, 2));
+                    dia = int.Parse(valor.Substring(8, 2));
+                }
+
+                if (k.Key == ConsoleKey.Backspace && valor.Length > 0)
+                {
+                    Console.Clear();
+                    if (valor.Length == 6) valor = valor.Substring(0, valor.Length - 2);
+
+                    else if (valor.Length == 9) valor = valor.Substring(0, valor.Length - 2);
+
+                    else valor = valor.Substring(0, valor.Length - 1);
+                    Console.WriteLine(valor);
+                }
+
+                if ((int)k.KeyChar >= 48 && (int)k.KeyChar <= 57 && valor.Length < 10)
+                {
+                    Console.Clear();
+                    valor = valor + k.KeyChar;
+                    Console.WriteLine(valor);
+                    if (valor.Length == 4) valor = valor + "/";
+                    if (valor.Length == 7) valor = valor + "/";
+                }
+
+                if (valor.Length == 10)
+                {
+                    
+                }
+            } while (!fin);
+            try
+            {
+                return new DateTime(año, mes, dia);
+            }
+            catch
+            {
+                Console.WriteLine("Ha ingresado erróneamente un dato de la fecha");
+                return new DateTime(1,1,1);
+            }
+
+        }
     }
 
     public class Selection_Menu

@@ -13,8 +13,10 @@ namespace Probando_Mi_libreria
             //Console.WriteLine(num);
             //Console.WriteLine(str);
             
-            Console.WriteLine(options[Selection_Menu.Print("Opc", 0, options)]);
+            //Console.WriteLine(options[Selection_Menu.Print("Opc", 0, options)]);
 
+            DateTime date = Validations.Date_input();
+            Console.WriteLine(date);
         }
     }
 }

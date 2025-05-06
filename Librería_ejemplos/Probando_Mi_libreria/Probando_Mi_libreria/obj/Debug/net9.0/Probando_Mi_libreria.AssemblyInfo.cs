@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Probando_Mi_libreria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e70d77524871a5b35edaef4cbc359b7c4413edf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6583330343db0d10ed8c1768c8fab18cd1634734")]
 [assembly: System.Reflection.AssemblyProductAttribute("Probando_Mi_libreria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Probando_Mi_libreria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

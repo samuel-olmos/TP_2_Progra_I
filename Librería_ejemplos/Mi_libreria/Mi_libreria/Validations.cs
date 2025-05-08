@@ -90,15 +90,8 @@ namespace Mi_libreria
                     }
                 }
 
-                else if (k.Key == ConsoleKey.Spacebar)
-                {
-                    Console.Write(" ");
-                    valor = valor + " ";
-                }
-
                 //Mostrando por pantalla los valores que se están presionando (solo letras)
-                if (((int)k.KeyChar >= 65 && (int)k.KeyChar <= 90) || ((int)k.KeyChar >= 97 && (int)k.KeyChar <= 122) || (int)k.KeyChar == 225 || (int)k.KeyChar == 233 || (int)k.KeyChar == 237
-                    || (int)k.KeyChar == 243 || (int)k.KeyChar == 250 || (int)k.KeyChar == 241 || (int)k.KeyChar == 209)
+                if ((int)k.KeyChar >= 32 && (int)k.KeyChar <= 254)
                 {
                     Console.Write(k.KeyChar); //Por pantalla
                     valor = valor + k.KeyChar; //En la cadena
@@ -143,14 +136,11 @@ namespace Mi_libreria
                     }
                 }
 
-                else if (k.Key == ConsoleKey.Spacebar)
-                {
-                    Console.Write(" ");
-                    valor = valor + " ";
-                }
-
                 //Mostrando por pantalla los valores que se están presionando (solo letras)
-                if (((int)k.KeyChar >= 65 && (int)k.KeyChar <= 90) || ((int)k.KeyChar >= 97 && (int)k.KeyChar <= 122))
+                if (((int)k.KeyChar >= 65 && (int)k.KeyChar <= 90) || ((int)k.KeyChar >= 97 && (int)k.KeyChar <= 122) ||
+                    ((int)k.KeyChar == 32) || ((int)k.KeyChar >= 128 && (int)k.KeyChar <= 167) || ((int)k.KeyChar >= 181 &&
+                    (int)k.KeyChar <= 183) || ((int)k.KeyChar == 198) || ((int)k.KeyChar == 199) || ((int)k.KeyChar >= 210 &&
+                    (int)k.KeyChar <= 218) || ((int)k.KeyChar >= 224 && (int)k.KeyChar <= 237))
                 {
                     Console.Write(k.KeyChar); //Por pantalla
                     valor = valor + k.KeyChar; //En la cadena

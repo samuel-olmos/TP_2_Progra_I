@@ -16,10 +16,36 @@ namespace TP_Biblioteca.Controladores
         {
             Console.Clear();
             bool existe = false;
+            bool agregarLibro = true;
             Tema tema = new Tema();
             tema.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             tema.Nombre = Validations.Letters_only_input();
+
+            while (agregarLibro)
+            {
+                string[] opciones = { "SI", "NO" };
+                int opcion = Selection_Menu.Print("¿Desea asociar el tema con algún libro?", 0, opciones);
+                switch (opcion)
+                {
+                    case 0: Console.Clear(); nLibro.Ordenar();
+                        if (Program.Libros.Count == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("\nNo existen datos");
+                            Console.ResetColor();
+                            Console.ReadKey(true);
+                            Menu();
+                            break;
+                        }
+                        string[] nombres= Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                        libros_del_tema.Add(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]);
+
+                        agregarLibro = true;  break;
+                    case 1: agregarLibro = false;  break;
+                    default: agregarLibro = true; break;
+                }    
+            }
             tema.Libros = libros_del_tema;
 
             foreach (Tema t in Program.Temas)
@@ -44,7 +70,7 @@ namespace TP_Biblioteca.Controladores
 
         public static void Ordenar()
         {
-            Program.Temas = Program.Temas.OrderBy(t => t.Nombre).ToList();
+            Program.Temas = Program.Temas.OrderByDescending(t => t.Nombre).ToList();
         }
 
         public static void OrdenarLibros(Tema tema)
@@ -103,11 +129,18 @@ namespace TP_Biblioteca.Controladores
             {
                 //Valida si existen libros asociados al tema
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Existen libros asociados a el tema que desea eliminar\nNo puede eliminar el tema");
+                Console.WriteLine("Existen libros asociados al tema que desea eliminar\nNo puede eliminar el tema");
                 Console.ResetColor();
                 Console.ReadKey(true);
                 return;
             }
+
+            //Hay que validar algo?
+            foreach (Libro l in tema.Libros)
+            {
+                l.Temas.Remove(tema);
+            }
+
             Program.Temas.Remove(tema);
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("\nTema borrado con éxito");
@@ -168,7 +201,6 @@ namespace TP_Biblioteca.Controladores
 
         public static void Menu()
         {
-            string[] nombres = Program.Temas.Select(l => l.Nombre).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Agregar Libro", "Volver" };
             Console.Clear();
             int opcion = Selection_Menu.Print("Temas", 0, opciones);
@@ -186,7 +218,8 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Modificar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
+                    string[] nombresModificar = Program.Temas.Select(l => l.Nombre).ToArray();
+                    Modificar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombresModificar)]); Menu(); break;
                 case 2:
                     Console.Clear(); Ordenar();
                     if (Program.Temas.Count == 0)
@@ -198,7 +231,8 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Eliminar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
+                    string[] nombresEliminar = Program.Temas.Select(l => l.Nombre).ToArray();
+                    Eliminar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombresEliminar)]); Menu(); break;
                 case 3: Console.Clear(); Ordenar(); Listar(); Menu(); break;
                 case 4: Console.Clear(); Ordenar();
                     if (Program.Temas.Count == 0)
@@ -210,7 +244,8 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    AgregarLibro(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
+                    string[] nombresAgregarLibro = Program.Temas.Select(l => l.Nombre).ToArray();
+                    AgregarLibro(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombresAgregarLibro)]); Menu(); break;
                 case 5: break;
                 default: Menu(); break;
             }

@@ -10,10 +10,12 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nLibro
     {
+        public static List<Tema> temas_del_libro = new List<Tema>();
         public static void Agregar()
         {
             Console.Clear();
             bool existe = false;
+            bool agregarTema = true;
             Libro libro = new Libro();
             libro.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
@@ -22,6 +24,33 @@ namespace TP_Biblioteca.Controladores
             libro.Autor = Validations.Letters_only_input();
             Console.Write("Coloque una descripción del libro: ");
             libro.Prologo = Validations.Letters_only_input();
+
+            while (agregarTema)
+            {
+                string[] opciones = { "SI", "NO" };
+                int opcion = Selection_Menu.Print("¿Desea asociar el libro con algún tema?", 0, opciones);
+                switch (opcion)
+                {
+                    case 0:
+                        Console.Clear(); nTema.Ordenar();
+                        if (Program.Temas.Count == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("\nNo existen datos");
+                            Console.ResetColor();
+                            Console.ReadKey(true);
+                            Menu();
+                            break;
+                        }
+                        string[] nombres = Program.Temas.Select(t => t.Nombre).ToArray();
+                        temas_del_libro.Add(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]);
+
+                        agregarTema = true; break;
+                    case 1: agregarTema = false; break;
+                    default: agregarTema = true; break;
+                }
+            }
+            libro.Temas = temas_del_libro;
 
             foreach (Libro l in Program.Libros)
             {
@@ -45,7 +74,7 @@ namespace TP_Biblioteca.Controladores
 
         public static void Ordenar()
         {
-            Program.Libros = Program.Libros.OrderBy(l => l.Nombre).ToList();
+            Program.Libros = Program.Libros.OrderByDescending(l => l.Nombre).ToList();
         }
 
         public static void Listar()
@@ -72,6 +101,19 @@ namespace TP_Biblioteca.Controladores
             Console.WriteLine($"Nombre del libro: {libro_seleccionado.Nombre}");
             Console.WriteLine($"Autor del libro: {libro_seleccionado.Autor}");
             Console.WriteLine($"Descripción: {libro_seleccionado.Prologo}");
+            Console.Write("Tema/s: ");
+            for (int i = 0; i < libro_seleccionado.Temas.Count; i++)
+            {
+                if (i == libro_seleccionado.Temas.Count-1)
+                {
+                    Console.WriteLine($"{libro_seleccionado.Temas[i].Nombre}");
+                }
+                else
+                {
+                    Console.Write($"{libro_seleccionado.Temas[i].Nombre}, ");
+                }
+            }
+            Console.WriteLine();
             Console.WriteLine("\nPresione cualquier tecla para volver...");
             Console.ReadKey(true);
         }
@@ -162,7 +204,6 @@ namespace TP_Biblioteca.Controladores
 
         public static void Menu()
         {
-            string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
             Console.Clear();
             int opcion = Selection_Menu.Print("Libros", 0, opciones);
@@ -179,7 +220,8 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Modificar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
+                    string[] nombresModificar = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                    Modificar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombresModificar)]); Menu(); break;
                 case 2: Console.Clear(); Ordenar();
                     if (Program.Libros.Count == 0)
                     {
@@ -190,7 +232,8 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Eliminar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
+                    string[] nombresEliminar = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                    Eliminar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombresEliminar)]); Menu(); break;
                 case 3: Console.Clear(); Ordenar(); Listar(); Menu(); break;
                 case 4: break;
                 default: Menu(); break;

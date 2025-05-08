@@ -89,9 +89,6 @@ namespace TP_Biblioteca.Controladores
         
         public static void Menu()
         {
-
-            var usuariosActivos = Program.Usuarios.Where(u => u.Activo).ToList();
-            string[] nombres = usuariosActivos.Select(u => u.Nombre + " " + u.Apellido).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Volver" };
             Console.Clear();
             int opcion = Selection_Menu.Print("Usuarios", 0, opciones);
@@ -109,8 +106,9 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-
-                    Modificar(usuariosActivos[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
+                    var usuariosActivosModificar = Program.Usuarios.Where(u => u.Activo).ToList();
+                    string[] nombresModificar = usuariosActivosModificar.Select(u => u.Nombre + " " + u.Apellido).ToArray();
+                    Modificar(usuariosActivosModificar[Selection_Menu.Print("Lista de Usuarios", 0, nombresModificar)]); Menu(); break;
                 case 2:
                     Console.Clear();
                     if (Program.Usuarios.Count == 0)
@@ -122,8 +120,9 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-
-                    Eliminar(usuariosActivos[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
+                    var usuariosActivosEliminar = Program.Usuarios.Where(u => u.Activo).ToList();
+                    string[] nombresEliminar = usuariosActivosEliminar.Select(u => u.Nombre + " " + u.Apellido).ToArray();
+                    Eliminar(usuariosActivosEliminar[Selection_Menu.Print("Lista de Usuarios", 0, nombresEliminar)]); Menu(); break;
                 case 3: break;
                 default: Menu(); break;
             }

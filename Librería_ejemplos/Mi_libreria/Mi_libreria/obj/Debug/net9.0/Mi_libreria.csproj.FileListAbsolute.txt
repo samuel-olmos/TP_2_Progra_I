@@ -43,15 +43,3 @@ C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_eje
 C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\refint\Mi_libreria.dll
 C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.pdb
 C:\Users\Samu\Documents\2do Año\Programación I\TPs\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\ref\Mi_libreria.dll
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.deps.json
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.dll
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\bin\Debug\net9.0\Mi_libreria.pdb
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.GeneratedMSBuildEditorConfig.editorconfig
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfoInputs.cache
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.AssemblyInfo.cs
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.csproj.CoreCompileInputs.cache
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.sourcelink.json
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.dll
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\refint\Mi_libreria.dll
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\Mi_libreria.pdb
-C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\Librería_ejemplos\Mi_libreria\Mi_libreria\obj\Debug\net9.0\ref\Mi_libreria.dll

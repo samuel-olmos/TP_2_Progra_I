@@ -16,7 +16,7 @@ namespace Mi_libreria
             //"Validando" que sea un número
             do
             {
-                ConsoleKeyInfo k = Console.ReadKey(true); 
+                ConsoleKeyInfo k = Console.ReadKey(true);
                 //Lo que se presione no se muestra en pantalla con el True
                 //Console.WriteLine((int)k.KeyChar);
 
@@ -40,7 +40,7 @@ namespace Mi_libreria
                         Console.Write("\b");
 
                         //Borrando el último número de la cadena almacenada 
-                        valor = valor.Substring(0, valor.Length - 1); 
+                        valor = valor.Substring(0, valor.Length - 1);
                     }
                 }
 
@@ -73,7 +73,7 @@ namespace Mi_libreria
                     {
                         fin = true;
                     }
-                    
+
                 }
                 //Borrando caracteres con Backspace
                 else if (k.Key == ConsoleKey.Backspace)
@@ -90,8 +90,14 @@ namespace Mi_libreria
                     }
                 }
 
+                else if (k.Key == ConsoleKey.Spacebar)
+                {
+                    Console.Write(" ");
+                    valor = valor + " ";
+                }
+
                 //Mostrando por pantalla los valores que se están presionando (solo letras)
-                if (((int)k.KeyChar >= 32 && (int)k.KeyChar <= 126) || (int)k.KeyChar == 225 || (int)k.KeyChar == 233 || (int)k.KeyChar == 237
+                if (((int)k.KeyChar >= 65 && (int)k.KeyChar <= 90) || ((int)k.KeyChar >= 97 && (int)k.KeyChar <= 122) || (int)k.KeyChar == 225 || (int)k.KeyChar == 233 || (int)k.KeyChar == 237
                     || (int)k.KeyChar == 243 || (int)k.KeyChar == 250 || (int)k.KeyChar == 241 || (int)k.KeyChar == 209)
                 {
                     Console.Write(k.KeyChar); //Por pantalla
@@ -156,58 +162,63 @@ namespace Mi_libreria
 
         public static DateTime Date_input()
         {
-            bool fin = false;
             int dia = 0;
             int mes = 0;
             int año = 0;
             string valor = "";
-            do
+            DateTime fechaValida;
+            while (true)
             {
-                ConsoleKeyInfo k = Console.ReadKey(true);
-
-                if (k.Key == ConsoleKey.Enter && valor.Length == 10)
+                Console.Clear();
+                valor = "";
+                while(true)
                 {
-                    fin = true;
-                    año = int.Parse(valor.Substring(0, 4));
-                    mes = int.Parse(valor.Substring(5, 2));
-                    dia = int.Parse(valor.Substring(8, 2));
-                }
+                    ConsoleKeyInfo k = Console.ReadKey(true);
 
-                if (k.Key == ConsoleKey.Backspace && valor.Length > 0)
-                {
+                    if (k.Key == ConsoleKey.Enter && valor.Length == 10)
+                    {
+                        try
+                        {
+                            año = int.Parse(valor.Substring(0, 4));
+                            mes = int.Parse(valor.Substring(5, 2));
+                            dia = int.Parse(valor.Substring(8, 2));
+                            fechaValida = new DateTime(año, mes, dia);
+                            return fechaValida;
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            Console.WriteLine("\nLa fecha ingresada no es válida. Presione una tecla para intentarlo nuevamente.");
+                            Console.ReadKey(true);
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("\nFormato numérico incorrecto. Presione una tecla para intentarlo nuevamente.");
+                            Console.ReadKey(true);
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"\nError inesperado: {ex.Message}");
+                            Console.ReadKey(true);
+                            break;
+                        }
+                    }
+                    if (k.Key == ConsoleKey.Backspace && valor.Length > 0)
+                    {
+                        if (valor.Length == 6) valor = valor.Substring(0, valor.Length - 2);
+                        else if (valor.Length == 9) valor = valor.Substring(0, valor.Length - 2);
+                        else valor = valor.Substring(0, valor.Length - 1);
+                    }
+                    if ((int)k.KeyChar >= 48 && (int)k.KeyChar <= 57 && valor.Length < 10)
+                    {
+                        if (valor.Length == 4 || valor.Length == 7) valor = valor + "/";
+                        valor = valor + k.KeyChar;
+                    }
                     Console.Clear();
-                    if (valor.Length == 6) valor = valor.Substring(0, valor.Length - 2);
-
-                    else if (valor.Length == 9) valor = valor.Substring(0, valor.Length - 2);
-
-                    else valor = valor.Substring(0, valor.Length - 1);
                     Console.WriteLine(valor);
                 }
-
-                if ((int)k.KeyChar >= 48 && (int)k.KeyChar <= 57 && valor.Length < 10)
-                {
-                    Console.Clear();
-                    valor = valor + k.KeyChar;
-                    Console.WriteLine(valor);
-                    if (valor.Length == 4) valor = valor + "/";
-                    if (valor.Length == 7) valor = valor + "/";
-                }
-
-                if (valor.Length == 10)
-                {
-                    
-                }
-            } while (!fin);
-            try
-            {
-                return new DateTime(año, mes, dia);
             }
-            catch
-            {
-                Console.WriteLine("Ha ingresado erróneamente un dato de la fecha");
-                return new DateTime(1,1,1);
-            }
-
         }
     }
 

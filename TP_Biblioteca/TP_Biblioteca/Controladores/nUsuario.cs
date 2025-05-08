@@ -42,7 +42,7 @@ namespace TP_Biblioteca.Controladores
 
         public static void Modificar(Usuario usuario)
         {
-            string[] opciones = new string[] { "Cambiar nombre", "Cambiar Apellido", "Cambiar Email", "Salir" };
+            string[] opciones = { "Cambiar nombre", "Cambiar Apellido", "Cambiar Email", "Salir" };
             int opcion = Selection_Menu.Print(usuario.Nombre + " " + usuario.Apellido, 0, opciones);
             switch (opcion)
             {

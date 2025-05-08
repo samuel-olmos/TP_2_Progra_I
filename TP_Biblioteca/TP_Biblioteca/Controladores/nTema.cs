@@ -11,13 +11,15 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nTema
     {
-        public static List<Libro> libros_del_tema = new List<Libro>();
+        //Está mal implementado?
+        public static List<Libro> libros_del_tema;
         public static void Agregar()
         {
             Console.Clear();
             bool existe = false;
             bool agregarLibro = true;
             Tema tema = new Tema();
+            libros_del_tema = new List<Libro>();
             tema.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             tema.Nombre = Validations.Letters_only_input();
@@ -92,10 +94,8 @@ namespace TP_Biblioteca.Controladores
             string[] nombres = Program.Temas.Select(t => t.Nombre).ToArray();
             Tema tema_seleccionado = Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)];
             Console.Clear();
-            Console.WriteLine($"Nombre del Tema: {tema_seleccionado.Nombre}");
-            Console.WriteLine("\nPresione cualquier tecla para continuar");
-            Console.ReadKey(true);
 
+            //No muestra los temas porque no están cargados desde Program.cs
             string[] opciones = { "SI", "NO" };
             int opcion = Selection_Menu.Print("Desea ver los libros asignados a este Tema?", 0, opciones);
             switch (opcion)
@@ -113,7 +113,7 @@ namespace TP_Biblioteca.Controladores
 
         public static void Modificar(Tema tema)
         {
-            string[] opciones = new string[] { "Cambiar nombre", "Salir" };
+            string[] opciones = { "Cambiar nombre", "Salir" };
             int opcion = Selection_Menu.Print(tema.Nombre, 0, opciones);
             switch (opcion)
             {

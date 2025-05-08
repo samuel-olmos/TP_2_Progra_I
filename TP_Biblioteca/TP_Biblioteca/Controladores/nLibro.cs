@@ -10,13 +10,15 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nLibro
     {
-        public static List<Tema> temas_del_libro = new List<Tema>();
+        //Está mal implementado?
+        public static List<Tema> temas_del_libro;
         public static void Agregar()
         {
             Console.Clear();
             bool existe = false;
             bool agregarTema = true;
             Libro libro = new Libro();
+            temas_del_libro = new List<Tema>();
             libro.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             libro.Nombre = Validations.Letters_only_input();
@@ -129,7 +131,6 @@ namespace TP_Biblioteca.Controladores
                 .ToList();
         }
 
-
         // Listar libros disponibles para préstamo
         public static Libro ListarDisponibles()
         {
@@ -160,7 +161,7 @@ namespace TP_Biblioteca.Controladores
         // Modificar libro
         public static void Modificar(Libro libro)
         {
-            string[] opciones = new string[] { "Cambiar nombre", "Cambiar Autor", "Cambiar Prólogo", "Salir" };
+            string[] opciones = { "Cambiar nombre", "Cambiar Autor", "Cambiar Prólogo", "Salir" };
             int opcion = Selection_Menu.Print(libro.Nombre + " - By " + libro.Autor, 0, opciones);
             switch (opcion)
             {
@@ -187,6 +188,7 @@ namespace TP_Biblioteca.Controladores
             else
             {
                 libro.Disponible = false;
+                Program.Libros.Remove(libro);
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("\nLibro borrado con éxito.");
                 Console.ResetColor();

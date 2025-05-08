@@ -206,7 +206,7 @@ namespace TP_Biblioteca
             {
                 case 1: Console.Clear(); nLibro.Menu(); Menu(); break;
                 case 2: Console.Clear(); nTema.Menu(); Menu(); break;
-                case 3: Console.Clear(); /*nUsuario.Menu();*/ Menu(); break;
+                case 3: Console.Clear(); nUsuario.Menu();Menu(); break;
                 case 4: Console.Clear(); nPrestamo.Menu(); Menu(); break;
                 case 5: break;
                 default: Menu(); break;

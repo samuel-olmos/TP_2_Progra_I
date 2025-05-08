@@ -41,3 +41,17 @@ C:\Users\milena.seri\Documents\projects\TP_2_Progra_I\TP_Biblioteca\TP_Bibliotec
 C:\Users\milena.seri\Documents\projects\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
 C:\Users\milena.seri\Documents\projects\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
 C:\Users\milena.seri\Documents\projects\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.exe
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.deps.json
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.runtimeconfig.json
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.dll
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.pdb
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.dll
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.pdb
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.AssemblyReference.cache
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Bibli.0D11A214.Up2Date
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.dll
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\refint\TP_Biblioteca.dll
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
+C:\UAP\2do AÑO PRIMER CUATRI\zGit\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll

@@ -119,13 +119,13 @@ namespace TP_Biblioteca.Controladores
         public static void Modificar(Libro libro)
         {
             string[] opciones = new string[] { "Cambiar nombre", "Cambiar Autor", "Cambiar Prólogo", "Salir" };
-            int opcion = Selection_Menu.Print(libro.Nombre + " - By " + libro.Autor, 1, opciones);
+            int opcion = Selection_Menu.Print(libro.Nombre + " - By " + libro.Autor, 0, opciones);
             switch (opcion)
             {
-                case 1: Console.Write("Ingrese Nuevo Nombre: "); libro.Nombre = Validations.Letters_only_input(); Modificar(libro); break;
-                case 2: Console.Write("Ingrese Nuevo Apellido: "); libro.Autor = Validations.Letters_only_input(); Modificar(libro); break;
-                case 3: Console.Write("Ingrese Nuevo Prólogo: "); libro.Prologo = Validations.Letters_only_input(); Modificar(libro); break;
-                case 4: break;
+                case 0: Console.Write("Ingrese Nuevo Nombre: "); libro.Nombre = Validations.Letters_only_input(); Modificar(libro); break;
+                case 1: Console.Write("Ingrese Nuevo Apellido: "); libro.Autor = Validations.Letters_only_input(); Modificar(libro); break;
+                case 2: Console.Write("Ingrese Nuevo Prólogo: "); libro.Prologo = Validations.Letters_only_input(); Modificar(libro); break;
+                case 3: break;
                 default: Modificar(libro); break;
             }
         }
@@ -165,11 +165,11 @@ namespace TP_Biblioteca.Controladores
             string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
             Console.Clear();
-            int opcion = Selection_Menu.Print("Libros", 0, opciones)+1;
+            int opcion = Selection_Menu.Print("Libros", 0, opciones);
             switch (opcion)
             {
-                case 1: Console.Clear(); Ordenar(); Agregar(); Menu(); break;
-                case 2: Console.Clear(); Ordenar();
+                case 0: Console.Clear(); Ordenar(); Agregar(); Menu(); break;
+                case 1: Console.Clear(); Ordenar();
                     if (Program.Libros.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -180,7 +180,7 @@ namespace TP_Biblioteca.Controladores
                         break;
                     }
                     Modificar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
-                case 3: Console.Clear(); Ordenar();
+                case 2: Console.Clear(); Ordenar();
                     if (Program.Libros.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -191,8 +191,8 @@ namespace TP_Biblioteca.Controladores
                         break;
                     }
                     Eliminar(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]); Menu(); break;
-                case 4: Console.Clear(); Ordenar(); Listar(); Menu(); break;
-                case 5: break;
+                case 3: Console.Clear(); Ordenar(); Listar(); Menu(); break;
+                case 4: break;
                 default: Menu(); break;
             }
         }

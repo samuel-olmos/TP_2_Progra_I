@@ -17,8 +17,7 @@ namespace TP_Biblioteca.Controladores
             Console.Write("Coloque el apellido del usuario: ");
             usuario.Apellido = Validations.Letters_only_input();
             Console.Write("Coloque el Email del usuario: ");
-            usuario.Email = Console.ReadLine();             // Le puse un ReadLine porque sino no puedo poner el @
-
+            usuario.Email = Validations.Characters_input();          
 
             foreach (Usuario u in Program.Usuarios)
             {
@@ -44,13 +43,13 @@ namespace TP_Biblioteca.Controladores
         public static void Modificar(Usuario usuario)
         {
             string[] opciones = new string[] { "Cambiar nombre", "Cambiar Apellido", "Cambiar Email", "Salir" };
-            int opcion = Selection_Menu.Print(usuario.Nombre + " - By " + usuario.Apellido, 1, opciones);
+            int opcion = Selection_Menu.Print(usuario.Nombre + " " + usuario.Apellido, 0, opciones);
             switch (opcion)
             {
-                case 1: Console.Write("Ingrese Nuevo Nombre: "); usuario.Nombre = Validations.Letters_only_input(); Modificar(usuario); break;
-                case 2: Console.Write("Ingrese Nuevo Apellido: "); usuario.Apellido = Validations.Letters_only_input(); Modificar(usuario); break;
-                case 3: Console.Write("Ingrese Nuevo Email: "); usuario.Email = Validations.Letters_only_input(); Modificar(usuario); break;
-                case 4: break;
+                case 0: Console.Write("Ingrese Nuevo Nombre: "); usuario.Nombre = Validations.Letters_only_input(); Modificar(usuario); break;
+                case 1: Console.Write("Ingrese Nuevo Apellido: "); usuario.Apellido = Validations.Letters_only_input(); Modificar(usuario); break;
+                case 2: Console.Write("Ingrese Nuevo Email: "); usuario.Email = Validations.Characters_input(); Modificar(usuario); break;
+                case 3: Menu(); break;
                 default: Modificar(usuario); break;
             }
         }
@@ -90,14 +89,16 @@ namespace TP_Biblioteca.Controladores
         
         public static void Menu()
         {
-            string[] nombres = Program.Usuarios.Select(u => u.Nombre + " - By " + u.Apellido).ToArray();
+
+            var usuariosActivos = Program.Usuarios.Where(u => u.Activo).ToList();
+            string[] nombres = usuariosActivos.Select(u => u.Nombre + " " + u.Apellido).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Volver" };
             Console.Clear();
-            int opcion = Selection_Menu.Print("Usuarios", 0, opciones) + 1;
+            int opcion = Selection_Menu.Print("Usuarios", 0, opciones);
             switch (opcion)
             {
-                case 1: Console.Clear(); Agregar(); Menu(); break;
-                case 2:
+                case 0: Console.Clear(); Agregar(); Menu(); break;
+                case 1:
                     Console.Clear(); 
                     if (Program.Usuarios.Count == 0)
                     {
@@ -108,8 +109,9 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Modificar(Program.Usuarios[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
-                case 3:
+
+                    Modificar(usuariosActivos[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
+                case 2:
                     Console.Clear();
                     if (Program.Usuarios.Count == 0)
                     {
@@ -120,9 +122,9 @@ namespace TP_Biblioteca.Controladores
                         Menu();
                         break;
                     }
-                    Eliminar(Program.Usuarios[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
-                case 4: Console.Clear(); Menu(); break;
-                case 5: break;
+
+                    Eliminar(usuariosActivos[Selection_Menu.Print("Lista de Usuarios", 0, nombres)]); Menu(); break;
+                case 3: break;
                 default: Menu(); break;
             }
         }

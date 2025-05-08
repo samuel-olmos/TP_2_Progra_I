@@ -22,7 +22,8 @@ namespace TP_Biblioteca
         public static void CargarDatos()
         {
             // Creación de temas
-            var tema1 = new Tema {
+            var tema1 = new Tema
+            {
                 Id = 1,
                 Nombre = "Literatura infantil"
             };

@@ -11,15 +11,16 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nTema
     {
+        public static List<Libro> libros_del_tema = new List<Libro>();
         public static void Agregar()
         {
             Console.Clear();
             bool existe = false;
             Tema tema = new Tema();
-            List<Libro> libros_del_tema = new List<Libro>();
             tema.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             tema.Nombre = Validations.Letters_only_input();
+            tema.Libros = libros_del_tema;
 
             foreach (Tema t in Program.Temas)
             {
@@ -46,6 +47,11 @@ namespace TP_Biblioteca.Controladores
             Program.Temas = Program.Temas.OrderBy(t => t.Nombre).ToList();
         }
 
+        public static void OrdenarLibros(Tema tema)
+        {
+            tema.Libros = tema.Libros.OrderBy(l => l.Nombre).ToList();
+        }
+
         public static void Listar()
         {
             Console.Clear();
@@ -68,7 +74,12 @@ namespace TP_Biblioteca.Controladores
             int opcion = Selection_Menu.Print("Desea ver los libros asignados a este Tema?", 0, opciones);
             switch (opcion)
             {
-                case 0: nLibro.Ordenar(); nLibro.Listar(); break;
+                case 0:
+                    foreach (Libro l in libros_del_tema)
+                    {
+                        Console.WriteLine(l.Nombre + " By " + l.Autor);
+                    }
+                    Console.ReadKey(true); break;
                 case 1: Console.WriteLine("\nPresione cualquier tecla para volver"); Console.ReadKey(true); break;
                 default: Listar(); break;
             }
@@ -77,7 +88,7 @@ namespace TP_Biblioteca.Controladores
         public static void Modificar(Tema tema)
         {
             string[] opciones = new string[] { "Cambiar nombre", "Salir" };
-            int opcion = Selection_Menu.Print(tema.Nombre, 1, opciones);
+            int opcion = Selection_Menu.Print(tema.Nombre, 0, opciones);
             switch (opcion)
             {
                 case 0: Console.Write("Ingrese Nuevo Nombre: "); tema.Nombre = Validations.Letters_only_input(); Modificar(tema); break;
@@ -160,11 +171,11 @@ namespace TP_Biblioteca.Controladores
             string[] nombres = Program.Temas.Select(l => l.Nombre).ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Agregar Libro", "Volver" };
             Console.Clear();
-            int opcion = Selection_Menu.Print("Temas", 0, opciones) + 1;
+            int opcion = Selection_Menu.Print("Temas", 0, opciones);
             switch (opcion)
             {
-                case 1: Console.Clear(); Ordenar(); Agregar(); Menu(); break;
-                case 2:
+                case 0: Console.Clear(); Ordenar(); Agregar(); Menu(); break;
+                case 1:
                     Console.Clear(); Ordenar();
                     if (Program.Temas.Count == 0)
                     {
@@ -176,7 +187,7 @@ namespace TP_Biblioteca.Controladores
                         break;
                     }
                     Modificar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
-                case 3:
+                case 2:
                     Console.Clear(); Ordenar();
                     if (Program.Temas.Count == 0)
                     {
@@ -188,8 +199,8 @@ namespace TP_Biblioteca.Controladores
                         break;
                     }
                     Eliminar(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
-                case 4: Console.Clear(); Ordenar(); Listar(); Menu(); break;
-                case 5: Console.Clear(); Ordenar();
+                case 3: Console.Clear(); Ordenar(); Listar(); Menu(); break;
+                case 4: Console.Clear(); Ordenar();
                     if (Program.Temas.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -200,7 +211,7 @@ namespace TP_Biblioteca.Controladores
                         break;
                     }
                     AgregarLibro(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]); Menu(); break;
-                case 6: break;
+                case 5: break;
                 default: Menu(); break;
             }
         }

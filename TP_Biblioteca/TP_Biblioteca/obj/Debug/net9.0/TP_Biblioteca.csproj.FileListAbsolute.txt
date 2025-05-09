@@ -110,10 +110,7 @@ C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.exe
-C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.deps.json
-C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.runtimeconfig.json
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.dll
-C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.pdb
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.dll
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.pdb
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.AssemblyReference.cache
@@ -126,5 +123,8 @@ C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Bi
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.dll
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\refint\TP_Biblioteca.dll
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.deps.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.runtimeconfig.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.pdb
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
 C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll

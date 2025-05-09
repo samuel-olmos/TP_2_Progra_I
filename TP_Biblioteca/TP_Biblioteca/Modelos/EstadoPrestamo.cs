@@ -8,8 +8,9 @@ namespace TP_Biblioteca.Modelos
 {
     public enum EstadoPrestamo
     {
-        Activo = 1,
-        Devuelto = 2,
-        Vencido = 3
+        Pendiente = 1,  // Préstamo programado para una fecha futura
+        Activo = 2,     // Libro en posesión del usuario
+        Devuelto = 3,   // Libro devuelto dentro del plazo
+        Vencido = 4     // No devuelto y pasada la fecha límite
     }
 }

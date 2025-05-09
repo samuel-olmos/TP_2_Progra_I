@@ -45,10 +45,14 @@ namespace TP_Biblioteca.Modelos
                 if (FechaDevolucionReal.HasValue)
                     return EstadoPrestamo.Devuelto;
 
+                // Si la fecha de préstamo es futura, el estado es "Pendiente"
+                if (FechaPrestamo > DateTime.Now)
+                    return EstadoPrestamo.Pendiente;
+
                 // Si pasó la fecha límite y no hay fecha de devolución, el estado es "Vencido"
                 if (DateTime.Now > FechaLimiteDevolucion && !FechaDevolucionReal.HasValue)
                     return EstadoPrestamo.Vencido;
-                
+
                 // En cualquier otro caso, el estado es "Activo"
                 return EstadoPrestamo.Activo;
             }

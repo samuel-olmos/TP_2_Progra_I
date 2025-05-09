@@ -118,11 +118,12 @@ namespace TP_Biblioteca
             tema5.Libros.Add(libro6);
 
             // Creación de usuarios
-            var usuario1 = new Usuario {
+            var usuario1 = new Usuario
+            {
                 Id = 1,
                 Nombre = "Tomás",
                 Apellido = "Caussa",
-                Email = "tomas.caussa@uap.edu.ar"
+                Email = "tomas.caussa@uap.edu.ar",
             };
             Usuarios.Add(usuario1);
 
@@ -142,9 +143,20 @@ namespace TP_Biblioteca
             };
             Usuarios.Add(usuario3);
 
+            // Usuario sin préstamos para probar eliminación
+            var usuario4 = new Usuario
+            {
+                Id = 4,
+                Nombre = "Ariel",
+                Apellido = "Romero",
+                Email = "ariel.romero@uap.edu.ar"
+            };
+            Usuarios.Add(usuario4);
+
             // Creación de préstamos
-            var prestamo1 = new Prestamo {
-                Id = 1,
+            var prestamo1 = new Prestamo
+            {
+                Id = 4,
                 Usuario = usuario1,
                 Libro = libro1
                 // Sin fecha de préstamo (DateTime.Now)
@@ -153,9 +165,11 @@ namespace TP_Biblioteca
                 // Estado "Activo"
             };
             Prestamos.Add(prestamo1);
+            usuario1.Prestamos.Add(prestamo1);
 
-            var prestamo2 = new Prestamo {
-                Id = 2,
+            var prestamo2 = new Prestamo
+            {
+                Id = 3,
                 Usuario = usuario3,
                 Libro = libro3,
                 FechaPrestamo = new DateTime(2025, 3, 1),
@@ -164,9 +178,11 @@ namespace TP_Biblioteca
                 // Estado "Devuelto"
             };
             Prestamos.Add(prestamo2);
+            usuario3.Prestamos.Add(prestamo2);
 
-            var prestamo3 = new Prestamo {
-                Id = 3,
+            var prestamo3 = new Prestamo
+            {
+                Id = 2,
                 Usuario = usuario3,
                 Libro = libro2,
                 FechaPrestamo = new DateTime(2025, 2, 4)
@@ -175,19 +191,23 @@ namespace TP_Biblioteca
                 // Estado "Vencido"
             };
             Prestamos.Add(prestamo3);
+            usuario3.Prestamos.Add(prestamo3);
 
-            var prestamo4 = new Prestamo {
-                Id = 4,
+            // Creación de préstamos
+            var prestamo4 = new Prestamo
+            {
+                Id = 1,
                 Usuario = usuario2,
                 Libro = libro5,
                 FechaPrestamo = new DateTime(2025, 1, 15),
-                // Sin fecha límite (DateTime.Now + 14 días)
                 FechaDevolucionReal = new DateTime(2025, 1, 20)
                 // Estado "Devuelto"
             };
             Prestamos.Add(prestamo4);
+            usuario2.Prestamos.Add(prestamo4);
 
-            var prestamo5 = new Prestamo {
+            var prestamo5 = new Prestamo
+            {
                 Id = 5,
                 Usuario = usuario2,
                 Libro = libro6
@@ -197,6 +217,7 @@ namespace TP_Biblioteca
                 // Estado "Activo"
             };
             Prestamos.Add(prestamo5);
+            usuario2.Prestamos.Add(prestamo5);
         }
 
         public static void Menu()

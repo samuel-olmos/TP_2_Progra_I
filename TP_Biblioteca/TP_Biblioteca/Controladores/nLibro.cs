@@ -19,11 +19,11 @@ namespace TP_Biblioteca.Controladores
             Libro libro = new Libro();
             libro.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
-            libro.Nombre = Validations.Letters_only_input();
+            libro.Nombre = Validations.Alphanumeric_input();
             Console.Write("Coloque el nombre del autor: ");
-            libro.Autor = Validations.Letters_only_input();
+            libro.Autor = Validations.Alphanumeric_input();
             Console.Write("Coloque una descripción del libro: ");
-            libro.Prologo = Validations.Letters_only_input();
+            libro.Prologo = Validations.Alphanumeric_input();
             libro.Temas = temasDelLibro;
 
             // Si se desea agregar un tema a la lista de temas de un libro
@@ -52,7 +52,7 @@ namespace TP_Biblioteca.Controladores
                             {
                                 flag_temaPorAgregar = true;
                                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                                Console.WriteLine("\nEl tema que desea asignar al libro ya está asignado");
+                                Console.WriteLine($"\nEl tema {temaPorAgregar.Nombre} ya pertenece a la lista de temas del libro");
                                 Console.ResetColor();
                             }
                         }
@@ -60,7 +60,7 @@ namespace TP_Biblioteca.Controladores
                         {
                             libro.Temas.Add(temaPorAgregar);
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            Console.WriteLine("\nEl tema se asignó con éxito");
+                            Console.WriteLine($"\nEl tema {temaPorAgregar.Nombre} se asignó con éxito");
                             Console.ResetColor();
                         }
                         Console.ReadKey(true);
@@ -100,7 +100,7 @@ namespace TP_Biblioteca.Controladores
             Console.Clear();
             
             // Filtrar libros disponibles
-            var librosDisponibles = Program.Libros.Where(l => l.Disponible).ToList();
+            var librosDisponibles = Program.Libros.Where(l => l.Activo).ToList();
 
             // Verificar que existan libros disponibles
             if (librosDisponibles.Count == 0)
@@ -142,37 +142,36 @@ namespace TP_Biblioteca.Controladores
         {
             // Filtrar libros disponibles que no están en préstamos activos o vencidos
             return Program.Libros
-                .Where(l => l.Disponible && !Program.Prestamos.Any(p =>
+                .Where(l => l.Activo && !Program.Prestamos.Any(p =>
                     p.Libro.Id == l.Id &&
                     (p.Estado == EstadoPrestamo.Activo || p.Estado == EstadoPrestamo.Vencido)))
                 .ToList();
         }
 
-        // Listar libros disponibles para préstamo
-        public static Libro ListarDisponibles()
+        // Verificar si un libro está disponible en una fecha específica
+        public static bool VerificarDisponibilidadEnFecha(Libro libro, DateTime fechaInicio, DateTime fechaFin)
         {
-            Console.Clear();
+            // Verificar que el libro esté marcado como activo en el sistema
+            if (!libro.Activo)
+                return false;
 
-            // Obtener libros disponibles usando la nueva función
-            var librosDisponibles = VerificarDisponibilidad();
+            // Verificar si hay préstamos que se solapan con las fechas indicadas
+            bool estaDisponible = !Program.Prestamos.Any(p =>
+                p.Libro.Id == libro.Id &&
+                p.Estado != EstadoPrestamo.Devuelto &&
+                (
+                    // Caso 1: El período del préstamo existente se solapa con el inicio del nuevo
+                    (p.FechaPrestamo <= fechaInicio && fechaInicio <= p.FechaLimiteDevolucion) ||
 
-            // Verificar si hay libros disponibles
-            if (librosDisponibles.Count == 0)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("\nNo hay libros disponibles para préstamo.");
-                Console.ResetColor();
-                return null;
-            }
+                    // Caso 2: El período del préstamo existente se solapa con el fin del nuevo
+                    (p.FechaPrestamo <= fechaFin && fechaFin <= p.FechaLimiteDevolucion) ||
 
-            // Crear un array con los nombres de los libros disponibles
-            string[] nombresLibros = librosDisponibles.Select(l => l.Nombre).ToArray();
+                    // Caso 3: El nuevo período contiene completamente al préstamo existente
+                    (fechaInicio <= p.FechaPrestamo && p.FechaLimiteDevolucion <= fechaFin)
+                )
+            );
 
-            // Mostrar lista de libros disponibles
-            int seleccionado = Selection_Menu.Print("Libros Disponibles", 0, nombresLibros);
-
-            // Retornar el libro seleccionado
-            return librosDisponibles[seleccionado];
+            return estaDisponible;
         }
 
         // Modificar libro
@@ -204,7 +203,7 @@ namespace TP_Biblioteca.Controladores
             }
             else
             {
-                libro.Disponible = false;
+                libro.Activo = false;
                 Program.Libros.Remove(libro);
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("\nLibro borrado con éxito.");
@@ -257,6 +256,40 @@ namespace TP_Biblioteca.Controladores
                 case 4: break;
                 default: Menu(); break;
             }
+        }
+
+        // Seleccionar un libro de la lista de libros disponibles (no eliminados)
+        public static Libro SeleccionarLibro(string titulo = "Seleccione un Libro")
+        {
+            Console.Clear();
+
+            // Filtrar libros disponibles (no eliminados)
+            var librosDisponibles = Program.Libros.Where(l => l.Activo).ToList();
+
+            // Verificar que existan libros disponibles
+            if (librosDisponibles.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo existen libros disponibles");
+                Console.ResetColor();
+                Console.ReadKey(true);
+                return null;
+            }
+
+            // Agregar opción para volver
+            List<string> nombresLibros = librosDisponibles.Select(l => l.Nombre + " - By " + l.Autor).ToList();
+            nombresLibros.Add("Volver");
+            string[] opcionesArray = nombresLibros.ToArray();
+
+            // Mostrar menú de selección
+            int seleccionado = Selection_Menu.Print(titulo, 0, opcionesArray);
+
+            // Verificar si se seleccionó "Volver"
+            if (seleccionado == nombresLibros.Count - 1)
+                return null;
+
+            // Retornar el libro seleccionado
+            return librosDisponibles[seleccionado];
         }
     }
 }

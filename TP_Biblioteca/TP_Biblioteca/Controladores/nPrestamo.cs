@@ -14,7 +14,7 @@ namespace TP_Biblioteca.Controladores
         // Menú principal
         public static void Menu()
         {
-            string[] nombres = Program.Prestamos.Select(p => p.Libro.Nombre + " | " + p.Usuario.Nombre + " " + p.Usuario.Apellido + " | " + p.FechaPrestamo + " | " + p.Estado).ToArray();
+            string[] nombres = Program.Prestamos.Select(p => $"{p.Id} | {p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}").ToArray();
             string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
             int opcion;
 
@@ -26,8 +26,8 @@ namespace TP_Biblioteca.Controladores
                 switch (opcion)
                 {
                     case 1: Agregar(); break;
-                    case 2: /*Modificar()*/ break;
-                    case 3: /*Eliminar()*/ break;
+                    case 2: Modificar(); break;
+                    case 3: Eliminar(); break;
                     case 4: Listar(); break;
                     case 5: return;
                 }
@@ -39,43 +39,126 @@ namespace TP_Biblioteca.Controladores
         {
             Console.Clear();
 
-            // Verificar si hay libros disponibles
-            var librosDisponibles = nLibro.VerificarDisponibilidad();
-            if (librosDisponibles.Count == 0)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("\nNo hay libros disponibles para préstamo.");
-                Console.ResetColor();
-                Console.WriteLine("\nPresione cualquier tecla para volver...");
-                Console.ReadKey(true);
-                return;
-            }
-
             // Crear un nuevo préstamo
             Prestamo prestamo = new Prestamo();
 
             // Asignar ID
             prestamo.Id = MaximoId();
 
-            // Seleccionar libro
-            prestamo.Libro = nLibro.ListarDisponibles();
+            // Preguntar primero por la fecha del préstamo
+            string[] opcionFecha = { "Fecha actual", "Fecha personalizada" };
+            int fechaSeleccionada = Selection_Menu.Print("Seleccione la fecha del préstamo", 0, opcionFecha);
+
+            DateTime fechaActual = DateTime.Now;
+
+            if (fechaSeleccionada == 0) // Fecha actual
+            {
+                prestamo.FechaPrestamo = fechaActual;
+
+                // Para préstamos actuales, mostrar solo libros actualmente disponibles
+                var librosDisponibles = nLibro.VerificarDisponibilidad();
+                if (librosDisponibles.Count == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\nNo hay libros disponibles para préstamo en este momento.");
+                    Console.ResetColor();
+                    Console.WriteLine("\nPresione cualquier tecla para volver...");
+                    Console.ReadKey(true);
+                    return;
+                }
+
+                string[] nombresLibros = librosDisponibles.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                int libroSeleccionado = Selection_Menu.Print("Seleccione un libro disponible", 0, nombresLibros);
+                prestamo.Libro = librosDisponibles[libroSeleccionado];
+            }
+            else // Fecha personalizada
+            {
+                // Obtener fecha personalizada
+                prestamo.FechaPrestamo = Validations.Date_input("Ingrese la fecha de préstamo (dd/MM/yyyy):");
+
+                // Seleccionar libro de todos los libros no eliminados
+                prestamo.Libro = nLibro.SeleccionarLibro("Seleccione un libro para el préstamo");
+
+                // Si no se seleccionó ningún libro, cancelar
+                if (prestamo.Libro == null) return;
+
+                // Calcular fecha límite de devolución (14 días por defecto)
+                DateTime fechaLimite = prestamo.FechaPrestamo.AddDays(14);
+
+                // Verificar si el libro está disponible en esas fechas
+                bool libroDisponible = nLibro.VerificarDisponibilidadEnFecha(prestamo.Libro, prestamo.FechaPrestamo, fechaLimite);
+
+                if (!libroDisponible)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("\nEl libro no está disponible en las fechas seleccionadas.");
+                    Console.ResetColor();
+                    Console.WriteLine("\nPresione cualquier tecla para volver...");
+                    Console.ReadKey(true);
+                    return;
+                }
+            }
 
             // Seleccionar usuario
-            // TODO: Necesito la función de listar en el controlador de usuarios
-            // NOTE: Habría que ver si un usuario con préstamos activos/vencidos puede pedir otro libro o tiene un límite
-            prestamo.Usuario = Program.Usuarios[Selection_Menu.Print("Seleccionar Usuario", 0, Program.Usuarios.Select(u => u.Nombre + " " + u.Apellido).ToArray())];
-            //prestamo.Usuario = nUsuario.Listar();
+            var usuariosActivos = Program.Usuarios.Where(u => u.Activo).ToList();
+            if (usuariosActivos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo hay usuarios disponibles.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
 
-            // Establecer fecha de préstamo como la fecha actual
-            prestamo.FechaPrestamo = DateTime.Now;
+            string[] nombresUsuarios = usuariosActivos.Select(u => $"{u.Nombre} {u.Apellido}").ToArray();
+            int usuarioSeleccionado = Selection_Menu.Print("Seleccionar Usuario", 0, nombresUsuarios);
+            prestamo.Usuario = usuariosActivos[usuarioSeleccionado];
 
-            // La fecha límite de devolución por default es 14 días (se puede extender al modificar el préstamo)
+            // Establecer fecha límite de devolución (14 días por defecto)
+            prestamo.FechaLimiteDevolucion = prestamo.FechaPrestamo.AddDays(14);
+
+            // Para préstamos históricos, permitir establecer si ya fue devuelto
+            if (prestamo.FechaPrestamo < fechaActual.Date)
+            {
+                string[] opcionesEstado = { "Devuelto", "No devuelto (Vencido/Activo)" };
+                int estadoSeleccionado = Selection_Menu.Print("¿El libro fue devuelto?", 0, opcionesEstado);
+
+                if (estadoSeleccionado == 0) // Devuelto
+                {
+                    // Solicitar fecha de devolución real
+                    DateTime fechaDevolucion = Validations.Date_input("Ingrese la fecha de devolución (dd/MM/yyyy):");
+
+                    // Validar que la fecha de devolución sea posterior a la de préstamo y no mayor que la fecha actual
+                    while (fechaDevolucion < prestamo.FechaPrestamo || fechaDevolucion > fechaActual)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        if (fechaDevolucion < prestamo.FechaPrestamo)
+                            Console.WriteLine("\nLa fecha de devolución debe ser posterior a la fecha de préstamo.");
+                        else
+                            Console.WriteLine("\nLa fecha de devolución no puede ser posterior a la fecha actual.");
+                        Console.ResetColor();
+                        fechaDevolucion = Validations.Date_input("Ingrese la fecha de devolución (dd/MM/yyyy):");
+                    }
+
+                    // Establecer fecha de devolución (el estado se calculará como "Devuelto")
+                    prestamo.FechaDevolucionReal = fechaDevolucion;
+                }
+                else // No devuelto
+                {
+                    // No asignar FechaDevolucionReal
+                    // El estado se calculará automáticamente en base a la fecha límite
+                }
+            }
+            // Para préstamos actuales o futuros, no establecer FechaDevolucionReal
 
             // Agregar el préstamo a la lista
             Program.Prestamos.Add(prestamo);
+
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("\nPréstamo agregado con éxito.");
             Console.ResetColor();
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
             Console.ReadKey(true);
         }
 
@@ -126,18 +209,38 @@ namespace TP_Biblioteca.Controladores
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("\nNo se encontraron préstamos.");
                 Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
                 return;
             }
 
-            prestamos = Ordenar(prestamos);
+            bool volverAMostrar = true;
+            while (volverAMostrar)
+            {
+                Console.Clear();
+                prestamos = Ordenar(prestamos);
 
-            string[] prestamosInfo = prestamos.Select(p =>
-                $"{p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}"
-            ).ToArray();
+                string[] prestamosInfo = prestamos.Select(p =>
+                    $"{p.Id} | {p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}"
+                ).ToArray();
 
-            int seleccionado = Selection_Menu.Print(titulo, 0, prestamosInfo);
+                // Añadir opción "Volver" al final
+                List<string> opcionesConVolver = new List<string>(prestamosInfo);
+                opcionesConVolver.Add("Volver");
 
-            MostrarDetallePrestamo(prestamos[seleccionado]);
+                int seleccionado = Selection_Menu.Print(titulo, 0, opcionesConVolver.ToArray());
+
+                // Si seleccionó "Volver", salir del bucle
+                if (seleccionado == opcionesConVolver.Count - 1)
+                {
+                    volverAMostrar = false;
+                }
+                else
+                {
+                    // Mostrar detalle y esperar a que el usuario presione una tecla
+                    MostrarDetallePrestamo(prestamos[seleccionado]);
+                }
+            }
         }
 
         // Mostrar detalles del préstamo
@@ -145,13 +248,35 @@ namespace TP_Biblioteca.Controladores
         {
             Console.Clear();
             Console.WriteLine("=== Detalle del Préstamo ===\n");
+            Console.WriteLine($"ID: {p.Id}");
             Console.WriteLine($"Libro: {p.Libro.Nombre}");
             Console.WriteLine($"Autor: {p.Libro.Autor}");
             Console.WriteLine($"Usuario: {p.Usuario.Nombre} {p.Usuario.Apellido}");
             Console.WriteLine($"Fecha de préstamo: {p.FechaPrestamo:dd/MM/yyyy}");
             Console.WriteLine($"Fecha límite: {p.FechaLimiteDevolucion:dd/MM/yyyy}");
             Console.WriteLine($"Fecha de devolución: {(p.FechaDevolucionReal.HasValue ? p.FechaDevolucionReal.Value.ToString("dd/MM/yyyy") : "No devuelto")}");
-            Console.WriteLine($"Estado: {p.Estado}");
+
+            Console.Write("Estado: ");
+            switch (p.Estado)
+            {
+                case EstadoPrestamo.Pendiente:
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Pendiente");
+                    break;
+                case EstadoPrestamo.Activo:
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Activo");
+                    break;
+                case EstadoPrestamo.Devuelto:
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.WriteLine("Devuelto");
+                    break;
+                case EstadoPrestamo.Vencido:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Vencido");
+                    break;
+            }
+            Console.ResetColor();
 
             Console.WriteLine("\nPresione cualquier tecla para volver...");
             Console.ReadKey(true);
@@ -240,6 +365,546 @@ namespace TP_Biblioteca.Controladores
             int max = 0;
             foreach (Prestamo prestamo in Program.Prestamos) if (prestamo.Id > max) max = prestamo.Id;
             return max + 1;
+        }
+
+        // Modificar préstamo
+        public static void Modificar()
+        {
+            Console.Clear();
+
+            // Verificar si hay préstamos
+            if (Program.Prestamos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo existen préstamos para modificar.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Mostrar lista de préstamos para selección
+            string[] prestamoInfos = Program.Prestamos.Select(p =>
+                $"{p.Id} | {p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}"
+            ).ToArray();
+
+            int seleccionado = Selection_Menu.Print("Seleccione un préstamo para modificar", 0, prestamoInfos);
+            Prestamo prestamoSeleccionado = Program.Prestamos[seleccionado];
+
+            // Menú para seleccionar el campo a modificar
+            bool continuarModificando = true;
+            DateTime fechaActual = DateTime.Now;
+
+            while (continuarModificando)
+            {
+                Console.Clear();
+                MostrarDetallePrestamo(prestamoSeleccionado);
+
+                string[] opcionesCampos = {
+                    "Modificar Usuario",
+                    "Modificar Libro",
+                    "Modificar Fecha de Préstamo",
+                    "Modificar Fecha Límite de Devolución",
+                    "Modificar Fecha de Devolución Real",
+                    "Guardar y Volver"
+                };
+
+                int opcionCampo = Selection_Menu.Print("¿Qué campo desea modificar?", 0, opcionesCampos);
+
+                switch (opcionCampo)
+                {
+                    case 0: // Modificar Usuario
+                        ModificarUsuarioPrestamo(prestamoSeleccionado);
+                        break;
+                    case 1: // Modificar Libro
+                        ModificarLibroPrestamo(prestamoSeleccionado, fechaActual);
+                        break;
+                    case 2: // Modificar Fecha de Préstamo
+                        ModificarFechaPrestamo(prestamoSeleccionado, fechaActual);
+                        break;
+                    case 3: // Modificar Fecha Límite
+                        ModificarFechaLimite(prestamoSeleccionado, fechaActual);
+                        break;
+                    case 4: // Modificar Fecha Devolución
+                        ModificarFechaDevolucion(prestamoSeleccionado, fechaActual);
+                        break;
+                    case 5: // Guardar y salir
+                        continuarModificando = false;
+                        break;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("\nCambios guardados con éxito.");
+            Console.ResetColor();
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+
+        // Modificar Usuario del préstamo
+        private static void ModificarUsuarioPrestamo(Prestamo prestamo)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Modificar Usuario del Préstamo ===\n");
+
+            // Obtener usuarios activos
+            var usuariosActivos = Program.Usuarios.Where(u => u.Activo).ToList();
+            if (usuariosActivos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo hay usuarios disponibles.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Mostrar lista de usuarios disponibles
+            string[] nombresUsuarios = usuariosActivos.Select(u => $"{u.Nombre} {u.Apellido}").ToArray();
+            int usuarioSeleccionado = Selection_Menu.Print("Seleccione el nuevo usuario", 0, nombresUsuarios);
+
+            // Confirmar cambio
+            Console.WriteLine($"\n¿Desea cambiar el usuario de {prestamo.Usuario.Nombre} {prestamo.Usuario.Apellido} a {usuariosActivos[usuarioSeleccionado].Nombre} {usuariosActivos[usuarioSeleccionado].Apellido}?");
+            string[] opcionesConfirmar = { "Sí", "No" };
+            int confirmar = Selection_Menu.Print("Confirmar cambio", 0, opcionesConfirmar);
+
+            if (confirmar == 0)
+            {
+                prestamo.Usuario = usuariosActivos[usuarioSeleccionado];
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("\nUsuario modificado con éxito.");
+                Console.ResetColor();
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+
+        // Modificar Libro del préstamo
+        private static void ModificarLibroPrestamo(Prestamo prestamo, DateTime fechaActual)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Modificar Libro del Préstamo ===\n");
+
+            // La modificación del libro depende del estado del préstamo
+            if (prestamo.Estado == EstadoPrestamo.Devuelto)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\nNo se puede modificar el libro de un préstamo ya devuelto.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            Libro libroOriginal = prestamo.Libro;
+
+            // Para préstamos futuros o actuales, verificar disponibilidad
+            if (prestamo.Estado == EstadoPrestamo.Pendiente || prestamo.Estado == EstadoPrestamo.Activo)
+            {
+                // Seleccionar libro con verificación de disponibilidad
+                Libro nuevoLibro;
+
+                if (prestamo.FechaPrestamo <= fechaActual.Date)
+                {
+                    // Para préstamos actuales o históricos
+                    var librosDisponibles = nLibro.VerificarDisponibilidad();
+                    if (librosDisponibles.Count == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("\nNo hay libros disponibles para préstamo en este momento.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+
+                    string[] nombresLibros = librosDisponibles.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                    int libroSeleccionado = Selection_Menu.Print("Seleccione el nuevo libro", 0, nombresLibros);
+                    nuevoLibro = librosDisponibles[libroSeleccionado];
+                }
+                else
+                {
+                    // Para préstamos futuros
+                    nuevoLibro = nLibro.SeleccionarLibro("Seleccione el nuevo libro");
+
+                    if (nuevoLibro == null) return;
+
+                    // Verificar disponibilidad en las fechas
+                    bool libroDisponible = nLibro.VerificarDisponibilidadEnFecha(nuevoLibro, prestamo.FechaPrestamo, prestamo.FechaLimiteDevolucion);
+
+                    if (!libroDisponible)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("\nEl libro no está disponible en las fechas del préstamo.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+                }
+
+                // Confirmar cambio
+                Console.WriteLine($"\n¿Desea cambiar el libro de \"{libroOriginal.Nombre}\" a \"{nuevoLibro.Nombre}\"?");
+                string[] opcionesConfirmar = { "Sí", "No" };
+                int confirmar = Selection_Menu.Print("Confirmar cambio", 0, opcionesConfirmar);
+
+                if (confirmar == 0)
+                {
+                    prestamo.Libro = nuevoLibro;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("\nLibro modificado con éxito.");
+                    Console.ResetColor();
+                }
+            }
+            else if (prestamo.Estado == EstadoPrestamo.Vencido)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\nAdvertencia: El préstamo está vencido. Considere registrar su devolución en lugar de cambiar el libro.");
+                Console.ResetColor();
+
+                // A pesar de la advertencia, permitir el cambio si se confirma
+                string[] opcionesContinuar = { "Continuar con la modificación", "Cancelar" };
+                int continuar = Selection_Menu.Print("¿Desea continuar?", 0, opcionesContinuar);
+
+                if (continuar == 0)
+                {
+                    Libro nuevoLibro = nLibro.SeleccionarLibro("Seleccione el nuevo libro");
+                    if (nuevoLibro != null)
+                    {
+                        prestamo.Libro = nuevoLibro;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("\nLibro modificado con éxito.");
+                        Console.ResetColor();
+                    }
+                }
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+
+        // Modificar Fecha de Préstamo
+        private static void ModificarFechaPrestamo(Prestamo prestamo, DateTime fechaActual)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Modificar Fecha de Préstamo ===\n");
+
+            if (prestamo.Estado == EstadoPrestamo.Devuelto)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\nAdvertencia: Este préstamo ya fue devuelto. Cambiar la fecha de préstamo podría afectar su estado.");
+                Console.ResetColor();
+            }
+
+            DateTime fechaOriginal = prestamo.FechaPrestamo;
+
+            // Obtener nueva fecha
+            DateTime nuevaFecha = Validations.Date_input("Ingrese la nueva fecha de préstamo (dd/MM/yyyy):");
+
+            // Validaciones
+            if (nuevaFecha > prestamo.FechaDevolucionReal && prestamo.FechaDevolucionReal.HasValue)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nLa fecha de préstamo no puede ser posterior a la fecha de devolución.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Verificar disponibilidad del libro en la nueva fecha
+            bool libroDisponible = nLibro.VerificarDisponibilidadEnFecha(
+                prestamo.Libro,
+                nuevaFecha,
+                nuevaFecha.AddDays((prestamo.FechaLimiteDevolucion - prestamo.FechaPrestamo).Days)
+            );
+
+            if (!libroDisponible && nuevaFecha != fechaOriginal)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nEl libro no está disponible en la nueva fecha seleccionada.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Confirmar cambio
+            Console.WriteLine($"\n¿Desea cambiar la fecha de préstamo del {fechaOriginal:dd/MM/yyyy} al {nuevaFecha:dd/MM/yyyy}?");
+            string[] opcionesConfirmar = { "Sí", "No" };
+            int confirmar = Selection_Menu.Print("Confirmar cambio", 0, opcionesConfirmar);
+
+            if (confirmar == 0)
+            {
+                // Calcular días de diferencia para mantener la duración del préstamo
+                int diasDiferencia = (prestamo.FechaLimiteDevolucion - prestamo.FechaPrestamo).Days;
+
+                prestamo.FechaPrestamo = nuevaFecha;
+                prestamo.FechaLimiteDevolucion = nuevaFecha.AddDays(diasDiferencia);
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("\nFecha de préstamo modificada con éxito.");
+                Console.WriteLine($"La fecha límite de devolución se ajustó a: {prestamo.FechaLimiteDevolucion:dd/MM/yyyy}");
+                Console.ResetColor();
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+
+        // Modificar Fecha Límite de Devolución
+        private static void ModificarFechaLimite(Prestamo prestamo, DateTime fechaActual)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Modificar Fecha Límite de Devolución ===\n");
+
+            if (prestamo.Estado == EstadoPrestamo.Devuelto)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\nAdvertencia: Este préstamo ya fue devuelto. Cambiar la fecha límite no afectará su estado.");
+                Console.ResetColor();
+            }
+
+            DateTime fechaOriginal = prestamo.FechaLimiteDevolucion;
+
+            // Obtener nueva fecha
+            DateTime nuevaFecha = Validations.Date_input("Ingrese la nueva fecha límite (dd/MM/yyyy):");
+
+            // Validaciones
+            if (nuevaFecha < prestamo.FechaPrestamo)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nLa fecha límite no puede ser anterior a la fecha de préstamo.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            if (prestamo.FechaDevolucionReal.HasValue && nuevaFecha < prestamo.FechaDevolucionReal.Value)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\nAdvertencia: La nueva fecha límite es anterior a la fecha de devolución real.");
+                Console.ResetColor();
+            }
+
+            // Verificar disponibilidad del libro hasta la nueva fecha límite
+            bool libroDisponible = nLibro.VerificarDisponibilidadEnFecha(
+                prestamo.Libro,
+                prestamo.FechaPrestamo,
+                nuevaFecha
+            );
+
+            if (!libroDisponible && nuevaFecha != fechaOriginal)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nEl libro no está disponible hasta la nueva fecha límite seleccionada.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Confirmar cambio
+            Console.WriteLine($"\n¿Desea cambiar la fecha límite de devolución del {fechaOriginal:dd/MM/yyyy} al {nuevaFecha:dd/MM/yyyy}?");
+            string[] opcionesConfirmar = { "Sí", "No" };
+            int confirmar = Selection_Menu.Print("Confirmar cambio", 0, opcionesConfirmar);
+
+            if (confirmar == 0)
+            {
+                prestamo.FechaLimiteDevolucion = nuevaFecha;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("\nFecha límite de devolución modificada con éxito.");
+                Console.ResetColor();
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+
+        // Modificar Fecha de Devolución Real
+        private static void ModificarFechaDevolucion(Prestamo prestamo, DateTime fechaActual)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Modificar Fecha de Devolución Real ===\n");
+
+            string[] opciones = { "Establecer fecha de devolución", "Eliminar fecha de devolución (marcar como no devuelto)", "Cancelar" };
+            int opcion = Selection_Menu.Print("Seleccione una opción", 0, opciones);
+
+            switch (opcion)
+            {
+                case 0: // Establecer fecha
+                    DateTime nuevaFecha = Validations.Date_input("Ingrese la fecha de devolución (dd/MM/yyyy):");
+
+                    // Validaciones
+                    if (nuevaFecha < prestamo.FechaPrestamo)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("\nLa fecha de devolución debe ser posterior a la fecha de préstamo.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+
+                    if (nuevaFecha > fechaActual)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("\nLa fecha de devolución no puede ser posterior a la fecha actual.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+
+                    // Confirmar cambio
+                    string mensajeConfirmar = prestamo.FechaDevolucionReal.HasValue
+                        ? $"¿Desea cambiar la fecha de devolución del {prestamo.FechaDevolucionReal.Value:dd/MM/yyyy} al {nuevaFecha:dd/MM/yyyy}?"
+                        : $"¿Desea establecer la fecha de devolución al {nuevaFecha:dd/MM/yyyy}?";
+
+                    Console.WriteLine("\n" + mensajeConfirmar);
+                    string[] opcionesConfirmar = { "Sí", "No" };
+                    int confirmar = Selection_Menu.Print("Confirmar cambio", 0, opcionesConfirmar);
+
+                    if (confirmar == 0)
+                    {
+                        prestamo.FechaDevolucionReal = nuevaFecha;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("\nFecha de devolución modificada con éxito.");
+                        Console.ResetColor();
+                    }
+                    break;
+
+                case 1: // Eliminar fecha
+                    if (!prestamo.FechaDevolucionReal.HasValue)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("\nEl préstamo ya está marcado como no devuelto.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+
+                    // Verificar si hay algún préstamo activo o pendiente del mismo libro
+                    bool existePrestamoActivoOMismLibro = Program.Prestamos.Any(p =>
+                        p.Id != prestamo.Id &&  // Que no sea el mismo préstamo
+                        p.Libro.Id == prestamo.Libro.Id &&  // Que sea el mismo libro
+                        (p.Estado == EstadoPrestamo.Activo ||
+                         p.Estado == EstadoPrestamo.Pendiente ||
+                         p.Estado == EstadoPrestamo.Vencido)  // Que esté activo, pendiente o vencido
+                    );
+
+                    if (existePrestamoActivoOMismLibro)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("\nNo se puede marcar este préstamo como 'no devuelto'.");
+                        Console.WriteLine("El libro ya está actualmente en préstamo o vencido en otra transacción.");
+                        Console.WriteLine("Esto generaría una inconsistencia en el sistema.");
+                        Console.ResetColor();
+                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.ReadKey(true);
+                        return;
+                    }
+
+                    // Confirmar eliminación
+                    Console.WriteLine("\n¿Está seguro que desea eliminar la fecha de devolución?");
+                    Console.WriteLine("Esto marcará el préstamo como no devuelto (Activo o Vencido según la fecha).");
+
+                    string[] opcionesEliminar = { "Sí", "No" };
+                    int confirmarEliminar = Selection_Menu.Print("Confirmar eliminación", 0, opcionesEliminar);
+
+                    if (confirmarEliminar == 0)
+                    {
+                        prestamo.FechaDevolucionReal = null;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("\nFecha de devolución eliminada con éxito.");
+                        Console.WriteLine("El préstamo ahora está marcado como no devuelto.");
+                        Console.ResetColor();
+                    }
+                    break;
+
+                case 2: // Cancelar
+                    return;
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
+        }
+        // Eliminar préstamo
+        public static void Eliminar()
+        {
+            Console.Clear();
+
+            // Verificar si hay préstamos
+            if (Program.Prestamos.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo existen préstamos para eliminar.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Mostrar lista de préstamos para selección
+            string[] prestamoInfos = Program.Prestamos.Select(p =>
+                $"ID: {p.Id} | {p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}"
+            ).ToArray();
+
+            int seleccionado = Selection_Menu.Print("Seleccione un préstamo para eliminar", 0, prestamoInfos);
+            Prestamo prestamoSeleccionado = Program.Prestamos[seleccionado];
+
+            // Validar que solo se puedan eliminar préstamos devueltos
+            if (prestamoSeleccionado.Estado != EstadoPrestamo.Devuelto)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nNo se puede eliminar un préstamo que no ha sido devuelto.");
+                Console.WriteLine("Solo se pueden eliminar préstamos con estado 'Devuelto'.");
+                Console.ResetColor();
+                Console.WriteLine("\nPresione cualquier tecla para volver...");
+                Console.ReadKey(true);
+                return;
+            }
+
+            // Confirmar eliminación
+            Console.WriteLine($"\n¿Está seguro que desea eliminar el préstamo ID: {prestamoSeleccionado.Id}?");
+            Console.WriteLine($"Libro: {prestamoSeleccionado.Libro.Nombre}");
+            Console.WriteLine($"Usuario: {prestamoSeleccionado.Usuario.Nombre} {prestamoSeleccionado.Usuario.Apellido}");
+            Console.WriteLine($"Fecha: {prestamoSeleccionado.FechaPrestamo:dd/MM/yyyy}");
+
+            string[] opcionesConfirmar = { "Sí", "No" };
+            int confirmar = Selection_Menu.Print("Confirmar eliminación", 0, opcionesConfirmar);
+
+            if (confirmar == 0)
+            {
+                // Quitar el préstamo de la lista del usuario (si existe)
+                if (prestamoSeleccionado.Usuario.Prestamos != null)
+                {
+                    var prestamoUsuario = prestamoSeleccionado.Usuario.Prestamos
+                        .FirstOrDefault(p => p.Id == prestamoSeleccionado.Id);
+
+                    if (prestamoUsuario != null)
+                    {
+                        prestamoSeleccionado.Usuario.Prestamos.Remove(prestamoUsuario);
+                    }
+                }
+
+                // Quitar el préstamo de la lista global
+                Program.Prestamos.Remove(prestamoSeleccionado);
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("\nPréstamo eliminado con éxito.");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.WriteLine("\nOperación cancelada.");
+            }
+
+            Console.WriteLine("\nPresione cualquier tecla para continuar...");
+            Console.ReadKey(true);
         }
     }
 }

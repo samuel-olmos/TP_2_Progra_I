@@ -69,7 +69,7 @@ namespace TP_Biblioteca.Controladores
             }
             else
             {
-                usuario.Activo = false; // Desactivar en lugar de eliminar
+                usuario.Activo = false; // Soft delete
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("\nUsuario desactivado con éxito.");
                 Console.ResetColor();
@@ -95,6 +95,7 @@ namespace TP_Biblioteca.Controladores
                 case 0: Console.Clear(); Agregar(); Menu(); break;
                 case 1:
                     Console.Clear();
+                    // Verificar si existen usuarios
                     if (Program.Usuarios.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;

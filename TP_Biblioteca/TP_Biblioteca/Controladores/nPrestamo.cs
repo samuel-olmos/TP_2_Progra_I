@@ -18,23 +18,23 @@ namespace TP_Biblioteca.Controladores
                 .Where(p => p.Activo)  // Filtrar solo préstamos activos
                 .Select(p => $"ID: {p.Id} | {p.FechaPrestamo:dd/MM/yyyy} | {p.Libro.Nombre} | {p.Usuario.Nombre} {p.Usuario.Apellido} | {p.Estado}")
                 .ToArray();
-            string[] opciones = new string[] { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
+            string[] opciones = { "Agregar", "Modificar", "Eliminar", "Listar", "Volver" };
             int opcion;
 
             do
             {
                 Console.Clear();
-                opcion = Selection_Menu.Print("Préstamos", 0, opciones) + 1;
+                opcion = Selection_Menu.Print("Préstamos", 0, opciones);
 
                 switch (opcion)
                 {
-                    case 1: Agregar(); break;
-                    case 2: Modificar(); break;
-                    case 3: Eliminar(); break;
-                    case 4: Listar(); break;
-                    case 5: return;
+                    case 0: Agregar(); break;
+                    case 1: Modificar(); break;
+                    case 2: Eliminar(); break;
+                    case 3: Listar(); break;
+                    case 4: return;
                 }
-            } while (opcion != 5);
+            } while (opcion != 4);
         }
 
         // Agregar préstamo
@@ -147,13 +147,7 @@ namespace TP_Biblioteca.Controladores
                     // Establecer fecha de devolución (el estado se calculará como "Devuelto")
                     prestamo.FechaDevolucionReal = fechaDevolucion;
                 }
-                else // No devuelto
-                {
-                    // No asignar FechaDevolucionReal
-                    // El estado se calculará automáticamente en base a la fecha límite
-                }
             }
-            // Para préstamos actuales o futuros, no establecer FechaDevolucionReal
 
             // Agregar el préstamo a la lista
             Program.Prestamos.Add(prestamo);
@@ -168,7 +162,7 @@ namespace TP_Biblioteca.Controladores
         // Menú listar
         public static void Listar()
         {
-            string[] opciones = new string[] {
+            string[] opciones = {
                 "Filtrar por Estado",
                 "Filtrar por Tema",
                 "Filtrar por Usuario",
@@ -198,7 +192,7 @@ namespace TP_Biblioteca.Controladores
                         break;
                     case 5:
                         return;
-               }
+                }
             } while (opcion != 5);
         }
 
@@ -324,7 +318,7 @@ namespace TP_Biblioteca.Controladores
             // Mostrar lista de temas
             int temaSeleccionado = Selection_Menu.Print("Seleccione el Tema", 0, temasNombres);
             string tema = temasNombres[temaSeleccionado];
-            
+
             var prestamosFiltrados = Program.Prestamos
                 .Where(p => p.Libro.Temas.Any(t => t.Nombre == tema) && p.Activo)  // Filtrar por tema Y activo
                 .ToList();
@@ -400,10 +394,22 @@ namespace TP_Biblioteca.Controladores
             int seleccionado = Selection_Menu.Print("Seleccione un préstamo para modificar", 0, prestamoInfos);
             Prestamo prestamoSeleccionado = prestamosActivos[seleccionado];
 
-            // Resto del método igual...
+            string[] modificaciones = { "Modificar Usuario", "Modificar Libro", "Modificar Fecha", "Modificar Fecha Límite",
+                "Modificar Fecha Devolución", "Volver" };
+            int opcionModificar = Selection_Menu.Print("Seleccione un campo para modificar", 0, modificaciones);
+            DateTime fechaActual = DateTime.Now;
+            switch (opcionModificar)
+            {
+                case 0: ModificarUsuarioPrestamo(prestamoSeleccionado); break;
+                case 1: ModificarLibroPrestamo(prestamoSeleccionado, fechaActual); break;
+                case 2: ModificarFechaPrestamo(prestamoSeleccionado, fechaActual); break;
+                case 3: ModificarFechaLimite(prestamoSeleccionado, fechaActual); break;
+                case 4: ModificarFechaDevolucion(prestamoSeleccionado, fechaActual); break;
+                case 5: break;
+            }
         }
 
-        // Modificar Usuario del préstamo
+        // Modificar Usuario del préstamo 
         private static void ModificarUsuarioPrestamo(Prestamo prestamo)
         {
             Console.Clear();

@@ -26,6 +26,7 @@ namespace TP_Biblioteca.Controladores
             libro.Prologo = Validations.Letters_only_input();
             libro.Temas = temasDelLibro;
 
+            // Si se desea agregar un tema a la lista de temas de un libro
             while (agregarTema)
             {
                 string[] opciones = { "SI", "NO" };
@@ -33,7 +34,7 @@ namespace TP_Biblioteca.Controladores
                 switch (opcion)
                 {
                     case 0:
-                        Console.Clear(); nTema.Ordenar();
+                        Console.Clear(); nTema.Ordenar(); bool flag_temaPorAgregar = false;
                         if (Program.Temas.Count == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -43,28 +44,26 @@ namespace TP_Biblioteca.Controladores
                             Menu();
                             break;
                         }
-
-                        //No se pueden ver los temas desde el método Listar
                         string[] nombres = Program.Temas.Select(t => t.Nombre).ToArray();
                         Tema temaPorAgregar = (Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]);
                         foreach (Tema t in libro.Temas)
                         {
                             if (temaPorAgregar.Id == t.Id && temaPorAgregar.Nombre == t.Nombre)
                             {
+                                flag_temaPorAgregar = true;
                                 Console.ForegroundColor = ConsoleColor.DarkRed;
                                 Console.WriteLine("\nEl tema que desea asignar al libro ya está asignado");
                                 Console.ResetColor();
-                                Console.ReadKey(true);
-                            }
-                            else
-                            {
-                                libro.Temas.Add(temaPorAgregar);
-                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                Console.WriteLine("\nEl tema se agregó con éxito");
-                                Console.ResetColor();
-                                Console.ReadKey(true);
                             }
                         }
+                        if (!flag_temaPorAgregar)
+                        {
+                            libro.Temas.Add(temaPorAgregar);
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine("\nEl tema se asignó con éxito");
+                            Console.ResetColor();
+                        }
+                        Console.ReadKey(true);
                         agregarTema = true; break;
                     case 1: agregarTema = false; break;
                     default: agregarTema = true; break;

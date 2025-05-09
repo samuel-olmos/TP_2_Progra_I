@@ -30,7 +30,7 @@ namespace TP_Biblioteca.Controladores
                 int opcion = Selection_Menu.Print("¿Desea asociar el tema con algún libro?", 0, opciones);
                 switch (opcion)
                 {
-                    case 0: Console.Clear(); nLibro.Ordenar();
+                    case 0: Console.Clear(); nLibro.Ordenar(); bool flag_libroPorAgregar = false;
                         if (Program.Libros.Count == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -41,7 +41,26 @@ namespace TP_Biblioteca.Controladores
                             break;
                         }
                         string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
-                        librosDelTema.Add(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]);
+                        Libro libroPorAgregar = (Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]);
+                        foreach (Libro l in tema.Libros)
+                        {
+                            if (libroPorAgregar.Id == l.Id && libroPorAgregar.Nombre == l.Nombre && 
+                                libroPorAgregar.Autor == l.Autor && libroPorAgregar.Prologo == l.Prologo)
+                            {
+                                flag_libroPorAgregar = true;
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                Console.WriteLine("\nEl libro que desea asignar al tema ya está asignado");
+                                Console.ResetColor();
+                            }
+                        }
+                        if (!flag_libroPorAgregar)
+                        {
+                            tema.Libros.Add(libroPorAgregar);
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine("\nEl libro se asignó con éxito");
+                            Console.ResetColor();
+                        }
+                        Console.ReadKey(true);
                         agregarLibro = true;  break;
                     case 1: agregarLibro = false;  break;
                     default: agregarLibro = true; break;

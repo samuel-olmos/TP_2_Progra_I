@@ -150,7 +150,7 @@ namespace Mi_libreria
             return valor.Trim(); //Retorna un string
         }
 
-        public static DateTime Date_input()
+        public static DateTime Date_input(string titulo)
         {
             int dia = 0;
             int mes = 0;
@@ -161,6 +161,7 @@ namespace Mi_libreria
             {
                 Console.Clear();
                 valor = "";
+                Console.WriteLine(titulo);
                 while(true)
                 {
                     ConsoleKeyInfo k = Console.ReadKey(true);
@@ -169,9 +170,9 @@ namespace Mi_libreria
                     {
                         try
                         {
-                            año = int.Parse(valor.Substring(0, 4));
-                            mes = int.Parse(valor.Substring(5, 2));
-                            dia = int.Parse(valor.Substring(8, 2));
+                            año = int.Parse(valor.Substring(6, 4));
+                            mes = int.Parse(valor.Substring(3, 2));
+                            dia = int.Parse(valor.Substring(0, 2));
                             fechaValida = new DateTime(año, mes, dia);
                             return fechaValida;
                         }
@@ -196,17 +197,17 @@ namespace Mi_libreria
                     }
                     if (k.Key == ConsoleKey.Backspace && valor.Length > 0)
                     {
-                        if (valor.Length == 6) valor = valor.Substring(0, valor.Length - 2);
-                        else if (valor.Length == 9) valor = valor.Substring(0, valor.Length - 2);
+                        if (valor.Length == 4) valor = valor.Substring(0, valor.Length - 2);
+                        else if (valor.Length == 7) valor = valor.Substring(0, valor.Length - 2);
                         else valor = valor.Substring(0, valor.Length - 1);
                     }
                     if ((int)k.KeyChar >= 48 && (int)k.KeyChar <= 57 && valor.Length < 10)
                     {
-                        if (valor.Length == 4 || valor.Length == 7) valor = valor + "/";
+                        if (valor.Length == 2 || valor.Length == 5) valor = valor + "/";
                         valor = valor + k.KeyChar;
                     }
                     Console.Clear();
-                    Console.WriteLine(valor);
+                    Console.WriteLine(titulo + valor);
                 }
             }
         }

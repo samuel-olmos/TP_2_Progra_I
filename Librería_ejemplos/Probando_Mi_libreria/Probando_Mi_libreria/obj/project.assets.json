@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Samu\\.nuget\\packages\\": {},
+    "C:\\Users\\samuel.olmos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Samu\\Documents\\2do Año\\Programación I\\TPs\\TP_2_Progra_I\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\Probando_Mi_libreria.csproj",
+      "projectUniqueName": "C:\\Users\\samuel.olmos\\Documents\\Samu\\2do Año\\Programación I\\TPs\\TP_2_Progra_I-main\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\Probando_Mi_libreria.csproj",
       "projectName": "Probando_Mi_libreria",
-      "projectPath": "C:\\Users\\Samu\\Documents\\2do Año\\Programación I\\TPs\\TP_2_Progra_I\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\Probando_Mi_libreria.csproj",
-      "packagesPath": "C:\\Users\\Samu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Samu\\Documents\\2do Año\\Programación I\\TPs\\TP_2_Progra_I\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\obj\\",
+      "projectPath": "C:\\Users\\samuel.olmos\\Documents\\Samu\\2do Año\\Programación I\\TPs\\TP_2_Progra_I-main\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\Probando_Mi_libreria.csproj",
+      "packagesPath": "C:\\Users\\samuel.olmos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samuel.olmos\\Documents\\Samu\\2do Año\\Programación I\\TPs\\TP_2_Progra_I-main\\Librería_ejemplos\\Probando_Mi_libreria\\Probando_Mi_libreria\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Samu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\samuel.olmos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

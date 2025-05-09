@@ -55,7 +55,7 @@ namespace Mi_libreria
             return int.Parse(valor); //Retorna un int
         }
 
-        public static string Characters_input()
+        public static string Alphanumeric_input()
         {
             bool fin = false; //Variable para Do While
             string valor = ""; //Cadena que se almacena para return
@@ -90,7 +90,7 @@ namespace Mi_libreria
                     }
                 }
 
-                //Mostrando por pantalla los valores que se están presionando (solo letras)
+                //Mostrando por pantalla los valores que se están presionando (alfanuméricos)
                 if ((int)k.KeyChar >= 32 && (int)k.KeyChar <= 254)
                 {
                     Console.Write(k.KeyChar); //Por pantalla
@@ -98,7 +98,7 @@ namespace Mi_libreria
                 }
             } while (!fin);
             Console.WriteLine();
-            return valor; //Retorna un string
+            return valor.Trim(); //Retorna un string
         }
 
         public static string Letters_only_input()
@@ -147,7 +147,7 @@ namespace Mi_libreria
                 }
             } while (!fin);
             Console.WriteLine();
-            return valor; //Retorna un string
+            return valor.Trim(); //Retorna un string
         }
 
         public static DateTime Date_input()
@@ -216,6 +216,12 @@ namespace Mi_libreria
     {
         public static int Print(string title, int index, string[] options)
         {
+            title = title.Trim();
+            if (title.Count() > 100)
+            {
+                Console.WriteLine("Texto demasiado largo");
+                return -1;
+            }
             if (index < options.Length - options.Length - 1 && index > options.Length+1)
             {
                 return -1;

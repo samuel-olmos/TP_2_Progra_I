@@ -91,3 +91,40 @@ C:\Users\samuel.olmos\Documents\Samu\2do Año\Programación I\TPs\TP_2_Progra_I-
 C:\Users\samuel.olmos\Documents\Samu\2do Año\Programación I\TPs\TP_2_Progra_I-main--\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
 C:\Users\samuel.olmos\Documents\Samu\2do Año\Programación I\TPs\TP_2_Progra_I-main--\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
 C:\Users\samuel.olmos\Documents\Samu\2do Año\Programación I\TPs\TP_2_Progra_I-main--\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.exe
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.deps.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.runtimeconfig.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.AssemblyReference.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfoInputs.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfo.cs
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Bibli.0D11A214.Up2Date
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\refint\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I-main\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.exe
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.deps.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.runtimeconfig.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\TP_Biblioteca.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\bin\Debug\net9.0\Mi_libreria.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.AssemblyReference.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfoInputs.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.AssemblyInfo.cs
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.sourcelink.json
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Bibli.0D11A214.Up2Date
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\refint\TP_Biblioteca.dll
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.pdb
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\TP_Biblioteca.genruntimeconfig.cache
+C:\Users\milena.seri\Documents\projects\career\TP_2_Progra_I\TP_Biblioteca\TP_Biblioteca\obj\Debug\net9.0\ref\TP_Biblioteca.dll

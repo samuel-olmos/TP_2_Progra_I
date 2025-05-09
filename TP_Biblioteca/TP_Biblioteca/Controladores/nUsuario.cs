@@ -17,7 +17,7 @@ namespace TP_Biblioteca.Controladores
             Console.Write("Coloque el apellido del usuario: ");
             usuario.Apellido = Validations.Letters_only_input();
             Console.Write("Coloque el Email del usuario: ");
-            usuario.Email = Validations.Characters_input();          
+            usuario.Email = Validations.Alphanumeric_input();          
 
             foreach (Usuario u in Program.Usuarios)
             {
@@ -48,7 +48,7 @@ namespace TP_Biblioteca.Controladores
             {
                 case 0: Console.Write("Ingrese Nuevo Nombre: "); usuario.Nombre = Validations.Letters_only_input(); Modificar(usuario); break;
                 case 1: Console.Write("Ingrese Nuevo Apellido: "); usuario.Apellido = Validations.Letters_only_input(); Modificar(usuario); break;
-                case 2: Console.Write("Ingrese Nuevo Email: "); usuario.Email = Validations.Characters_input(); Modificar(usuario); break;
+                case 2: Console.Write("Ingrese Nuevo Email: "); usuario.Email = Validations.Alphanumeric_input(); Modificar(usuario); break;
                 case 3: break;
                 default: Modificar(usuario); break;
             }

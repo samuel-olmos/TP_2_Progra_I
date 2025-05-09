@@ -36,6 +36,9 @@ namespace TP_Biblioteca.Modelos
         // Fecha en la que se realizó la devolución (por defecto null)
         public DateTime? FechaDevolucionReal { get; set; } = null;
 
+        // Indica si el préstamo está activo en el sistema o fue eliminado
+        public bool Activo { get; set; } = true;
+
         // Estado del préstamo (por defecto "Activo")
         public EstadoPrestamo Estado
         {

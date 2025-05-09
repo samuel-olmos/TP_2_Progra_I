@@ -11,19 +11,19 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nTema
     {
-        //Está mal implementado?
-        public static List<Libro> libros_del_tema;
         public static void Agregar()
         {
             Console.Clear();
-            bool existe = false;
-            bool agregarLibro = true;
+            bool existe = false; // Booleano para verificar la existencia del tema que se desea agregar
+            bool agregarLibro = true; // Booleano para el while si se desea agregar un libro a la lista de libros del tema
+            List<Libro> librosDelTema = new List<Libro>(); // Cada tema tiene una lista de libros
             Tema tema = new Tema();
-            libros_del_tema = new List<Libro>();
             tema.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             tema.Nombre = Validations.Letters_only_input();
+            tema.Libros = librosDelTema;
 
+            // Si se desea agregar un libro a la lista de libros de un tema
             while (agregarLibro)
             {
                 string[] opciones = { "SI", "NO" };
@@ -40,16 +40,15 @@ namespace TP_Biblioteca.Controladores
                             Menu();
                             break;
                         }
-                        string[] nombres= Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
-                        libros_del_tema.Add(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]);
-
+                        string[] nombres = Program.Libros.Select(l => l.Nombre + " - By " + l.Autor).ToArray();
+                        librosDelTema.Add(Program.Libros[Selection_Menu.Print("Lista de Libros", 0, nombres)]);
                         agregarLibro = true;  break;
                     case 1: agregarLibro = false;  break;
                     default: agregarLibro = true; break;
                 }    
             }
-            tema.Libros = libros_del_tema;
 
+            // Validando que el Tema que se desea agregar no exista ya en la lista de temas
             foreach (Tema t in Program.Temas)
             {
                 if (t.Id == tema.Id && t.Nombre == tema.Nombre)
@@ -101,7 +100,7 @@ namespace TP_Biblioteca.Controladores
             switch (opcion)
             {
                 case 0:
-                    foreach (Libro l in libros_del_tema)
+                    foreach (Libro l in tema_seleccionado.Libros)
                     {
                         Console.WriteLine(l.Nombre + " By " + l.Autor);
                     }

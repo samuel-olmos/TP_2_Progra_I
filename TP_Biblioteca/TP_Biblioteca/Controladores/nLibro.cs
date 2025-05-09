@@ -10,15 +10,13 @@ namespace TP_Biblioteca.Controladores
 {
     internal class nLibro
     {
-        //Está mal implementado?
-        public static List<Tema> temas_del_libro;
         public static void Agregar()
         {
             Console.Clear();
             bool existe = false;
             bool agregarTema = true;
+            List<Tema> temasDelLibro = new List<Tema>();
             Libro libro = new Libro();
-            temas_del_libro = new List<Tema>();
             libro.Id = MaximoId();
             Console.Write("Coloque el nombre: ");
             libro.Nombre = Validations.Letters_only_input();
@@ -26,6 +24,7 @@ namespace TP_Biblioteca.Controladores
             libro.Autor = Validations.Letters_only_input();
             Console.Write("Coloque una descripción del libro: ");
             libro.Prologo = Validations.Letters_only_input();
+            libro.Temas = temasDelLibro;
 
             while (agregarTema)
             {
@@ -44,15 +43,33 @@ namespace TP_Biblioteca.Controladores
                             Menu();
                             break;
                         }
-                        string[] nombres = Program.Temas.Select(t => t.Nombre).ToArray();
-                        temas_del_libro.Add(Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]);
 
+                        //No se pueden ver los temas desde el método Listar
+                        string[] nombres = Program.Temas.Select(t => t.Nombre).ToArray();
+                        Tema temaPorAgregar = (Program.Temas[Selection_Menu.Print("Lista de Temas", 0, nombres)]);
+                        foreach (Tema t in libro.Temas)
+                        {
+                            if (temaPorAgregar.Id == t.Id && temaPorAgregar.Nombre == t.Nombre)
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                Console.WriteLine("\nEl tema que desea asignar al libro ya está asignado");
+                                Console.ResetColor();
+                                Console.ReadKey(true);
+                            }
+                            else
+                            {
+                                libro.Temas.Add(temaPorAgregar);
+                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                Console.WriteLine("\nEl tema se agregó con éxito");
+                                Console.ResetColor();
+                                Console.ReadKey(true);
+                            }
+                        }
                         agregarTema = true; break;
                     case 1: agregarTema = false; break;
                     default: agregarTema = true; break;
                 }
             }
-            libro.Temas = temas_del_libro;
 
             foreach (Libro l in Program.Libros)
             {
@@ -104,6 +121,7 @@ namespace TP_Biblioteca.Controladores
             Console.WriteLine($"Autor del libro: {libro_seleccionado.Autor}");
             Console.WriteLine($"Descripción: {libro_seleccionado.Prologo}");
             Console.Write("Tema/s: ");
+            Console.WriteLine($"Lista de temas: {libro_seleccionado.Temas.Count}");
             for (int i = 0; i < libro_seleccionado.Temas.Count; i++)
             {
                 if (i == libro_seleccionado.Temas.Count-1)
